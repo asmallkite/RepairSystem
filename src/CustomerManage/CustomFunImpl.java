@@ -3,6 +3,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.*;
 
 
 public class CustomFunImpl implements CustomFun {
@@ -41,11 +42,35 @@ public class CustomFunImpl implements CustomFun {
 	        return  customer;
 	    }
 
-	@Override
-	public void insertCus(Customer customer) {
-		// TODO Auto-generated method stub
-		
-	}
+	 @Override
+	    public void insertCus(Customer customer) {
+	        Connection connection = null;
+	        PreparedStatement preparedStatement = null;
+
+	        try {
+	            connection = DbUtils.getConnection();
+	            String sql = "INSERT INTO customer VALUES(?,?,?,?,?,?,?,?,?,?,?)";
+	            preparedStatement = connection.prepareStatement(sql);
+	            preparedStatement.setInt(1, customer.getCustomer_number());
+	            preparedStatement.setString(2, customer.getCustomer_id());
+	            preparedStatement.setDate(3, (Date) customer.getCustomer_send_mac());
+	            preparedStatement.setString(4, customer.getCustomer_nature());
+	            preparedStatement.setString(5, customer.getCustomer_unit());
+	            preparedStatement.setString(6, customer.getCustomer_tel());
+	            preparedStatement.setString(7, customer.getCustomer_phone());
+	            preparedStatement.setString(8, customer.getCustomer_address());
+	            preparedStatement.setString(9, customer.getCustomer_postcode());
+	            preparedStatement.setString(10, customer.getCustomer_contacts());
+	            preparedStatement.setString(11, customer.getCustomer_email());
+	            preparedStatement.executeUpdate();
+
+	        } catch (SQLException e) {
+	            e.printStackTrace();
+	        } finally {
+	            DbUtils.closePrepareStatement(preparedStatement);
+	            DbUtils.closeConnection(connection);
+	        }
+	    }
 
 	@Override
 	public void deleteCusByNo(int customer_number) {
