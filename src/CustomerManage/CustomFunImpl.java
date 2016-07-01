@@ -72,11 +72,24 @@ public class CustomFunImpl implements CustomFun {
 	        }
 	    }
 
-	@Override
-	public void deleteCusByNo(int customer_number) {
-		// TODO Auto-generated method stub
-		
-	}
+	    @Override
+	    public void deleteCusByNo(int customer_number) {
+	        Connection connection = null;
+	        PreparedStatement preparedStatement = null;
+	        try {
+	            connection = DbUtils.getConnection();
+	            //执行删除语句
+	            String sql = "DELETE  from customer  where customer_number = ?";
+	            preparedStatement = connection.prepareStatement(sql);
+	            preparedStatement.setInt(1, customer_number);
+	            preparedStatement.executeUpdate();
+	        }catch (SQLException e) {
+	            e.printStackTrace();
+	        } finally {
+	            DbUtils.closePrepareStatement(preparedStatement);
+	            DbUtils.closeConnection(connection);
+	        }
+	    }
 
 	@Override
 	public void updateCusByNo(int customer_number) {
