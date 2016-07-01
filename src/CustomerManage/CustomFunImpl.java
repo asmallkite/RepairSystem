@@ -90,11 +90,10 @@ public class CustomFunImpl implements CustomFun {
 	            DbUtils.closeConnection(connection);
 	        }
 	    }
-
-	@Override
-	public void updateCusByNo(int customer_number) {
-		// TODO Auto-generated method stub
-		
-	}
+//此功能为测试
+	    @Override
+	    public void updateCusByNo(Customer customer) {
+	     this.insertCus(customer);
+	    }
 
 }
