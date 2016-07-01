@@ -39,7 +39,7 @@ public class CustomerFunManage {
 			connection = DbUtils.getConnection();
 			CustomFunImpl customFunImpl = new CustomFunImpl(connection);
 			DbUtils.beginTransaction(connection);
-			customFunImpl.getCusByNo(customer_number);
+			customer = customFunImpl.getCusByNo(customer_number);
 			DbUtils.commit(connection);
 		} catch (ServiceException e) {
 			throw e;
