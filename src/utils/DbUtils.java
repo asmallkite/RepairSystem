@@ -1,7 +1,8 @@
-package CustomerManage;
+package utils;
 
 
 import java.sql.*;
+
 
 public class DbUtils {
         //静态代码块
@@ -27,6 +28,31 @@ public class DbUtils {
         return  connection;
     }
 
+    public static void beginTransaction(Connection conn) {
+		try {
+			conn.setAutoCommit(false);
+		} catch (SQLException e) {
+			throw new ServiceException("Can not begin transaction", e);
+		}
+	}
+
+	public static void commit(Connection conn) {
+		try {
+			conn.commit();
+			conn.setAutoCommit(true);
+		} catch (SQLException e) {
+			throw new ServiceException("Can not commit transaction", e);
+		}
+	}
+
+	public static void rollback(Connection conn) {
+		try {
+			conn.rollback();
+			conn.setAutoCommit(true);
+		} catch (SQLException e) {
+			throw new ServiceException("Can not rollback transaction", e);
+		}
+	}
 
     //关闭ResultSet
     public static void closeResultSet (ResultSet resultSet){

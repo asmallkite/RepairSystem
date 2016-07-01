@@ -1,12 +1,28 @@
 package CustomerManage;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.sql.*;
+
+import utils.DbUtils;
 
 
 public class CustomFunImpl implements CustomFun {
+	
+	/**
+	 * 数据库连接
+	 */
+	private Connection connection;
+	
+	
+	
+
+	public CustomFunImpl() {
+	}
+	/**
+	 * 构造方法
+	 * @param conn 数据库连接
+	 */
+	public CustomFunImpl(Connection conn) {
+		this.connection = conn;
+	}
 	 @Override
 	    public Customer getCusByNo(int customer_number) {
 	        Connection connection = null;

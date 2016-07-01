@@ -6,9 +6,9 @@ import java.text.SimpleDateFormat;
 public class TestCus {
 	public static void main(String[] args) {
 		CustomFun customTest = new CustomFunImpl();
-//		Customer customer01 = null;
-//		customer01 = customTest.getCusByNo(1);
-//		System.out.println("user info:\n" + customer01.getCustomer_address());
+		Customer customer01 = null;
+		customer01 = customTest.getCusByNo(2);
+		System.out.println("user info:\n" + customer01.getCustomer_address() + customer01.getCustomer_contacts());
 		
 		
 //		String date = "2010-1-2";
@@ -28,7 +28,7 @@ public class TestCus {
 //		customer01 = customTest.getCusByNo(2);
 //		System.out.println("user info:\n" + customer01.getCustomer_address());
 		
-		customTest.deleteCusByNo(1);
+//		customTest.deleteCusByNo(1);
 		
 
 }
