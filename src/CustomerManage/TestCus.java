@@ -11,24 +11,25 @@ public class TestCus {
 //		System.out.println("user info:\n" + customer01.getCustomer_address() + customer01.getCustomer_contacts());
 		
 		
-		String date = "2010-1-2";
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-		java.util.Date newDate = null;
-		try {
-			newDate = sdf.parse(date);
-		} catch (ParseException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	
-		java.sql.Date sqlStartDate = new java.sql.Date(newDate.getTime());
-		Customer customer02= new Customer(8,"410728155669874",sqlStartDate, "商户", "阿里", "阿里", "阿里", "阿里","阿里", "阿里", "阿里");
-		customTest.insertCus(customer02);
-		Customer customer01 = null;
-		customer01 = customTest.getCusByNo(1);
-		System.out.println("user info:\n" + customer01.getCustomer_address());
+//		String date = "2016-10-05";
+//		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+//		java.util.Date newDate = null;
+//		try {
+//			newDate = sdf.parse(date);
+//		} catch (ParseException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//	
+//		java.sql.Date sqlStartDate = new java.sql.Date(newDate.getTime());
+//		Customer customer02= new Customer(2,"410728199502066512",sqlStartDate, "单位用户", "华科", 
+//				"03738986548", "13437195758", "河南省新乡市","453400", "李争", "1064844142@qq.com");
+//		customTest.insertCus(customer02);
+//		Customer customer01 = null;
+//		customer01 = customTest.getCusByNo(1);
+//		System.out.println("user info:\n" + customer01.getCustomer_address());
 		
-//		customTest.deleteCusByNo(3);
+		customTest.deleteCusByNo(2);
 		
 
 }
