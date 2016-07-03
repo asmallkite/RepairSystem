@@ -6,14 +6,6 @@ import utils.DbUtils;
 
 public class CustomFunImpl implements CustomFun {
 	
-	/**
-	 * 数据库连接
-	 */
-	private Connection connection;
-	
-	
-	
-
 	public CustomFunImpl() {
 	}
 	/**
@@ -21,7 +13,6 @@ public class CustomFunImpl implements CustomFun {
 	 * @param conn 数据库连接
 	 */
 	public CustomFunImpl(Connection conn) {
-		this.connection = conn;
 	}
 	 @Override
 	    public Customer getCusByNo(int customer_number) {

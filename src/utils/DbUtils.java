@@ -15,7 +15,7 @@ public class DbUtils {
         System.out.println("conncetion start!");
     }
     //连接数据库
-    public static Connection getConnection(){
+    synchronized public static Connection getConnection(){
         Connection connection = null;
         String url = "jdbc:oracle:" + "thin:@127.0.0.1:1521:orcl";
         String user = "scott";
