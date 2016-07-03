@@ -187,7 +187,7 @@ div#footer {clear:both;text-align:center;}
 
 <tr>
   <th height="68" bgcolor="#9AD0D8">客户性质:</th>
-  <td>  <select name="customer_nature" id="customer_nature">   
+  <td>  <select name="customer_nature" >   
         <option value="家庭用户">家庭用户</option>   
         <option value="单位用户">单位用户</option>   
         <option value="代理商" selected="selected">代理商</option>   
@@ -197,39 +197,39 @@ div#footer {clear:both;text-align:center;}
 
 <tr>
   <th  bgcolor="#9AD0D8">单位名称:</th>
-  <td><input type="text" name="CustomerId"></td>
+  <td><input type="text" name="customer_unit"></td>
 </tr>
 
 
 
 <tr>
   <th  bgcolor="#9AD0D8">客户座机:</th>
-  <td><input type="text" name="CustomerId"></td>
+  <td><input type="text" name="customer_tel"></td>
 </tr>
 
 <tr>
   <th  bgcolor="#9AD0D8">移动电话:</th>
-  <td><input type="text" name="CustomerId"></td>
+  <td><input type="text" name="customer_phone"></td>
 </tr>
 
 <tr>
   <th  bgcolor="#9AD0D8">客户地址:</th>
-  <td><input type="text" name="CustomerId"></td>
+  <td><input type="text" name="customer_address"></td>
 </tr>
 
 <tr>
   <th  bgcolor="#9AD0D8">客户邮编:</th>
-  <td><input type="text" name="CustomerId"></td>
+  <td><input type="text" name="customer_postcode"></td>
 </tr>
 
 
 <tr>
   <th bgcolor="#9AD0D8">联系人:</th>
-  <td ><input type="text" name="ProductType"></td>
+  <td ><input type="text" name="customer_contacts"></td>
 </tr>
 <tr>
   <th  bgcolor="#9AD0D8">email:</th>
-  <td style="width:350px"><input type="text" name="TroubleType"></td>
+  <td style="width:350px"><input type="text" name="customer_email"></td>
 </tr>
   </table>
   </div>

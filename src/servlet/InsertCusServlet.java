@@ -1,6 +1,5 @@
 package servlet;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.sql.Date;
@@ -19,7 +18,7 @@ public class InsertCusServlet extends HttpServlet {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	 private int customer_number;
+	 private int customer_number = 2;
 	 private String customer_id;
 	 private Date customer_send_mac;
 	 private String customer_nature;
@@ -44,6 +43,7 @@ public class InsertCusServlet extends HttpServlet {
 			response.setContentType("text/html;charset=UTF-8");
 			request.setCharacterEncoding("utf-8");
 			response.setCharacterEncoding("utf-8");
+//			System.out.println(request.getParameter("customer_number") + "ehhhhhhhhhhhhhhhhhhhhhhhhh");
 			customer_number = Integer.parseInt(request.getParameter("customer_number"));
 			customer_id = request.getParameter("customer_id");
 			//处理时间转换
@@ -74,18 +74,18 @@ public class InsertCusServlet extends HttpServlet {
 			CustomerFunManage customTest = CustomerFunManage.getInstance();
 			customTest.insertCus(customer);
 			
-			
-			PrintWriter out = response.getWriter();
-			out.println("<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\">");
-			out.println("<HTML>");
-			out.println(" <HEAD><TITLE>A Servlet</TITLE></HEAD>");
-			out.println(" <BODY>");
-			out.print("username:"+customer_number+"<br>");
-			out.print("password:"+request.getParameter("customer_id")+"<br>");
-			out.println(" </BODY>");
-			out.println("</HTML>");
-			out.flush();
-			out.close();
+//			
+//			PrintWriter out = response.getWriter();
+//			out.println("<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\">");
+//			out.println("<HTML>");
+//			out.println(" <HEAD><TITLE>A Servlet</TITLE></HEAD>");
+//			out.println(" <BODY>");
+//			out.print("username:"+customer_number+"<br>");
+//			out.print("password:"+request.getParameter("customer_id")+"<br>");
+//			out.println(" </BODY>");
+//			out.println("</HTML>");
+//			out.flush();
+//			out.close();
 			}
 
 }
