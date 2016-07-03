@@ -22,7 +22,7 @@ public class TestCus {
 		}
 	
 		java.sql.Date sqlStartDate = new java.sql.Date(newDate.getTime());
-		Customer customer02= new Customer(2,"410728155669874",sqlStartDate, "商户", "阿里", "阿里", "阿里", "阿里","阿里", "阿里", "阿里");
+		Customer customer02= new Customer(8,"410728155669874",sqlStartDate, "商户", "阿里", "阿里", "阿里", "阿里","阿里", "阿里", "阿里");
 		customTest.insertCus(customer02);
 		Customer customer01 = null;
 		customer01 = customTest.getCusByNo(1);
