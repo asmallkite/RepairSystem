@@ -1,11 +1,8 @@
+<%@page import="CustomerManage.Customer"%>
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
-<%@ page  import="CustomerManage.Customer" %>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
-
-//System.out.println("can send here " + findCus_another.getCustomer_number());
-Customer findCus_another = (Customer)request.getAttribute("findCus_another");
 %>
 
 <!DOCTYPE html>
@@ -169,10 +166,7 @@ div#footer {clear:both;text-align:center;}
 </ul>
 
 </div>
-<div id="content">
-
-<form action="../findCusServlet" method="post">
-<table background="table13.jpg"   border="0" cellspacing="0">
+<div id="content"><table background="table13.jpg"   border="0" cellspacing="0">
 <tr>
   <td width="900" height="650">
   
@@ -195,67 +189,75 @@ div#footer {clear:both;text-align:center;}
   </div>
   <div id=kong2;>
 
-  
+  <form action="submitpage.htm" onsubmit="return validate_form(this)" method="post">
+<p><font size="4" face="Verdana" color="#66CCCC" >
+      <B>请输入客户编号:</B>
+    </font>   
+<input type="text" name="customer_number2">
+<input type="submit" name="Submit" value="结果如下" background-color=" #9AD0D8" style="height:40px;width:80px; background:#9AD0D8"> 
+</p>
+</form>
   <table width="589"" bordercolor="#66CCCC"  border="0">
+<% Customer Display = (Customer)request.getAttribute("findCus_another"); %>
 <tr>
   <th  bgcolor="#9AD0D8">客户编号:</th>
-  <td><input type="text" name="customer_number" value=<%=findCus_another.getCustomer_number()%>></td>
+  <td><input type="text" name="customer_number" value = <%=Display.getCustomer_number() %>></td>
 </tr>
 <tr>
   <th  bgcolor="#9AD0D8">身份编号:</th>
-  <td><input type="text" name="customer_id" value=<%=findCus_another.getCustomer_id()%>></td>
+  <td><input type="text" name="customer_id"></td>
 </tr>
 
 <tr>
   <th  bgcolor="#9AD0D8">客户送机时间:</th>
-  <td><input type="text" name="customer_send_mac" value=<%=findCus_another.getCustomer_send_mac()%>>></td>
+  <td><input type="text" name="customer_send_mac"></td>
 </tr>
 
 <tr>
   <th height="68" bgcolor="#9AD0D8">客户性质:</th>
-  <td>  <input type="text" name="customer_nature" value=<%=findCus_another.getCustomer_nature()%>>  </td>
+  <td>  <select name="customer_nature" id="customer_nature">   
+        <option value="1">家庭用户</option>   
+        <option value="2">单位用户</option>   
+        <option value="3">代理商</option>   
+         <option value="4">签约用户</option>
+      </select>   </td>
 </tr>
 
 <tr>
   <th  bgcolor="#9AD0D8">单位名称:</th>
-  <td><input type="text" name="customer_unit" value=<%=findCus_another.getCustomer_unit()%>></td>
+  <td><input type="text" name="customer_unit"></td>
 </tr>
 
 
 
 <tr>
   <th  bgcolor="#9AD0D8">客户座机:</th>
-  <td><input type="text" name="customer_tel" value=<%=findCus_another.getCustomer_tel()%>></td>
+  <td><input type="text" name="customer_tel"></td>
 </tr>
 
 <tr>
   <th  bgcolor="#9AD0D8">移动电话:</th>
-  <td><input type="text" name="customer_phone" value=<%=findCus_another.getCustomer_phone()%>></td>
+  <td><input type="text" name="customer_phone"></td>
 </tr>
 
 <tr>
   <th  bgcolor="#9AD0D8">客户地址:</th>
-  <td><input type="text" name="customer_address" value=<%=findCus_another.getCustomer_address()%>></td>
+  <td><input type="text" name="customer_address"></td>
 </tr>
 
 <tr>
   <th  bgcolor="#9AD0D8">客户邮编:</th>
-  <td><input type="text" name="customer_postcode" value=<%=findCus_another.getCustomer_postcode()%>></td>
+  <td><input type="text" name="customer_postcode"></td>
 </tr>
 
 
 <tr>
   <th bgcolor="#9AD0D8">联系人:</th>
-  <td ><input type="text" name="customer_contacts" value=<%=findCus_another.getCustomer_contacts()%>></td>
-</tr>
-<tr>
-  <th  bgcolor="#9AD0D8">email:</th>
-  <td style="width:350px"><input type="text" name="customer_email" value=<%=findCus_another.getCustomer_email()%>></td>
+  <td ><input type="text" name="customer_contacts"></td>
 </tr>
 
   </table>
   </div>
- 
     <div id=kong3>
   </div>
   <div>
@@ -270,8 +272,7 @@ div#footer {clear:both;text-align:center;}
 
 
   </table>
-</form>
-
+</div>
 <div id="footer"></div>
 <table background="123.jpg" border="0">
 <tr>
@@ -283,3 +284,4 @@ div#footer {clear:both;text-align:center;}
 </div>
 </body>
 </html>
+
