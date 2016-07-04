@@ -1,8 +1,11 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
-<%@ page import="CustomerManage.Customer" %>
+<%@ page  import="CustomerManage.Customer" %>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+
+//System.out.println("can send here " + findCus_another.getCustomer_number());
+Customer findCus_another = (Customer)request.getAttribute("findCus_another");
 %>
 
 <!DOCTYPE html>
@@ -196,24 +199,7 @@ div#footer {clear:both;text-align:center;}
   <table width="589"" bordercolor="#66CCCC"  border="0">
 <tr>
   <th  bgcolor="#9AD0D8">客户编号:</th>
-  <td>
-  <%
-Customer findCus_another = (Customer)request.getAttribute("findCus_another"); 
-if(findCus_another == null){
-findCus_another.setCustomer_number(66);
-findCus_another.setCustomer_id("0000000");
-findCus_another.setCustomer_contacts("n");
-findCus_another.setCustomer_email("ddd");
-findCus_another.setCustomer_nature("ddd");
-findCus_another.setCustomer_address("n");
-findCus_another.setCustomer_unit("ddd");
-findCus_another.setCustomer_phone("ddd");
-findCus_another.setCustomer_tel("n");
-
-findCus_another.setCustomer_postcode("aaaa");
-}
-%>
-  <input type="text" name="customer_number" value=<%=findCus_another.getCustomer_number()%>></td>
+  <td><input type="text" name="customer_number" value=<%=findCus_another.getCustomer_number()%>></td>
 </tr>
 <tr>
   <th  bgcolor="#9AD0D8">身份编号:</th>
@@ -222,7 +208,7 @@ findCus_another.setCustomer_postcode("aaaa");
 
 <tr>
   <th  bgcolor="#9AD0D8">客户送机时间:</th>
-  <td><input type="text" name="customer_send_mac" value=<%=findCus_another.getCustomer_send_mac()%>></td>
+  <td><input type="text" name="customer_send_mac" value=<%=findCus_another.getCustomer_send_mac()%>>></td>
 </tr>
 
 <tr>
@@ -232,7 +218,7 @@ findCus_another.setCustomer_postcode("aaaa");
 
 <tr>
   <th  bgcolor="#9AD0D8">单位名称:</th>
-  <td><input type="text" name="customer_unit" value=<%=findCus_another.getCustomer_unit()%>> </td>
+  <td><input type="text" name="customer_unit" value=<%=findCus_another.getCustomer_unit()%>></td>
 </tr>
 
 

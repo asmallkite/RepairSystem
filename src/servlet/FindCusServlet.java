@@ -48,7 +48,9 @@ public class FindCusServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		
-		
+		response.setContentType("text/html;charset=UTF-8");
+		request.setCharacterEncoding("utf-8");
+		response.setCharacterEncoding("utf-8");
 		String cus_number_temp = request.getParameter("customer_number");
 		System.out.println("FIndCusServlet is starting now   at DdoPost  获取的值是" + cus_number_temp );
 		int cus_number = Integer.parseInt(cus_number_temp);
@@ -59,7 +61,7 @@ public class FindCusServlet extends HttpServlet {
 		System.out.println("执行玩查找工作`````········......");
 		request.setAttribute("findCus_another", findCus);
 		System.out.println("执行玩setAttribute········......");
-		RequestDispatcher dispatcher = request.getRequestDispatcher("Customer/Test.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("Customer/FindCus2.jsp");
 		System.out.println("执行玩RequestDispatcher dispatcher = request.getRequestDispatcher......");
 		dispatcher.include(request, response);
 		System.out.println("执行wanbi  你成功了····················");
