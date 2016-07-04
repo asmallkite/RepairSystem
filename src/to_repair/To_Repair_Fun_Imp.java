@@ -114,13 +114,27 @@ public class To_Repair_Fun_Imp implements To_repair_Fun {
 
 	@Override
 	public void deleteToRepairByNo(String to_repair_number) {
-		// TODO Auto-generated method stub
+		   Connection connection = null;
+	        PreparedStatement preparedStatement = null;
+	        try {
+	            connection = DbUtils.getConnection();
+	            //执行删除语句
+	            String sql = "DELETE  from to_repair  where to_repair_number = ?";
+	            preparedStatement = connection.prepareStatement(sql);
+	            preparedStatement.setString(1, to_repair_number);
+	            preparedStatement.executeUpdate();
+	        }catch (SQLException e) {
+	            e.printStackTrace();
+	        } finally {
+	            DbUtils.closePrepareStatement(preparedStatement);
+	            DbUtils.closeConnection(connection);
+	        }
 		
 	}
 
 	@Override
 	public void updateToRepairByNo(String to_repair_number) {
-		// TODO Auto-generated method stub
+		
 		
 	}
 	
