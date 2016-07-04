@@ -1,6 +1,6 @@
 package to_repair;
 
-public class to_repair_stament {
+public class To_repair_stament {
 	private String to_repair_number;
 	private String customer_number;
 	private String to_repair_product_type;
@@ -22,7 +22,7 @@ public class to_repair_stament {
 	private String to_repair_time;
 	private String to_repair_price;
 	private String to_repair_state;
-	public to_repair_stament(String to_repair_number, String customer_number,
+	public To_repair_stament(String to_repair_number, String customer_number,
 			String to_repair_product_type, String to_repair_mac_brand,
 			String to_repair_mac_type, String to_repair_serial,
 			String to_repair_lack_part, String to_repair_trouble_phen,
