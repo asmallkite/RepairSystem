@@ -22,6 +22,10 @@ public class To_repair_stament {
 	private String to_repair_time;
 	private String to_repair_price;
 	private String to_repair_state;
+	
+	public To_repair_stament() {
+		super();
+	}
 	public To_repair_stament(String to_repair_number, String customer_number,
 			String to_repair_product_type, String to_repair_mac_brand,
 			String to_repair_mac_type, String to_repair_serial,

@@ -24,25 +24,35 @@ public class To_Repair_Fun_Imp implements To_repair_Fun {
 		 Connection connection = null;
 	        PreparedStatement preparedStatement = null;
 	        ResultSet resultSet = null;
-	        To_Repair_Fun_Imp to_Repair_Fun_Imp = new To_Repair_Fun_Imp();
+	        To_repair_stament to_repair_stament = new To_repair_stament();
 	        try {
 	            connection = DbUtils.getConnection();
 	            String sql = "SELECT * from to_repair  where to_repair_number = ?";
 	            preparedStatement = connection.prepareStatement(sql);
-	            preparedStatement.setInt(1, customer_number);
+	            preparedStatement.setString(1, to_repair_number);
 	            resultSet = preparedStatement.executeQuery();
 	            while (resultSet.next()) {
-	                customer.setCustomer_number(resultSet.getInt("customer_number"));
-	                customer.setCustomer_id(resultSet.getString("customer_id"));
-	                customer.setCustomer_send_mac(resultSet.getDate("customer_send_mac"));
-	                customer.setCustomer_nature(resultSet.getString("customer_nature"));
-	                customer.setCustomer_nature(resultSet.getString("customer_unit"));
-	                customer.setCustomer_tel(resultSet.getString("customer_tel"));
-	                customer.setCustomer_phone(resultSet.getString("customer_phone"));
-	                customer.setCustomer_address(resultSet.getString("customer_address"));
-	                customer.setCustomer_postcode(resultSet.getString("customer_postcode"));
-	                customer.setCustomer_contacts(resultSet.getString("customer_contacts"));
-	                customer.setCustomer_email(resultSet.getString("customer_email"));
+	            	to_repair_stament.setTo_repair_number(resultSet.getString("to_repair_number"));
+	            	to_repair_stament.setCustomer_number(resultSet.getString("customer_number"));
+	            	to_repair_stament.setTo_repair_product_type(resultSet.getString("to_repair_product_type"));
+	            	to_repair_stament.setTo_repair_mac_brand(resultSet.getString("to_repair_mac_brand"));
+	               	to_repair_stament.setTo_repair_mac_type(resultSet.getString("to_repair_mac_type"));
+	            	to_repair_stament.setCustomer_number(resultSet.getString("to_repair_serial"));
+	            	to_repair_stament.setTo_repair_serial(resultSet.getString("to_repair_lack_part"));
+	            	to_repair_stament.setTo_repair_trouble_phen(resultSet.getString("to_repair_trouble_phen"));
+	               	to_repair_stament.setTo_repair_trouble_type(resultSet.getString("to_repair_trouble_type"));
+	            	to_repair_stament.setTo_repair_facial_check(resultSet.getString("to_repair_facial_check"));
+	            	to_repair_stament.setTo_repair_start_cmd(resultSet.getString("to_repair_start_cmd"));
+	            	to_repair_stament.setTo_repair_impo_files(resultSet.getString("to_repair_impo_files"));
+	               	to_repair_stament.setTo_repair_hdd(resultSet.getString("to_repair_hdd"));
+	            	to_repair_stament.setTo_repair_pc(resultSet.getString("to_repair_pc"));
+	            	to_repair_stament.setTo_repair_ac(resultSet.getString("to_repair_ac"));
+	            	to_repair_stament.setTo_repair_battery(resultSet.getString("to_repair_battery"));
+	               	to_repair_stament.setTo_repair_cd_driver(resultSet.getString("to_repair_cd_driver"));
+	            	to_repair_stament.setTo_repair_floppy(resultSet.getString("to_repair_floppy"));
+	            	to_repair_stament.setTo_repair_time(resultSet.getString("to_repair_time"));
+	            	to_repair_stament.setTo_repair_price(resultSet.getString("to_repair_price"));
+	            	to_repair_stament.setTo_repair_state(resultSet.getString("to_repair_state"));
 	            }
 	        } catch (SQLException e) {
 	            e.printStackTrace();
@@ -51,7 +61,7 @@ public class To_Repair_Fun_Imp implements To_repair_Fun {
 	            DbUtils.closePrepareStatement(preparedStatement);
 	            DbUtils.closeConnection(connection);
 	        }
-	        return  customer;
+	        return  to_repair_stament;
 	}
 
 	@Override
