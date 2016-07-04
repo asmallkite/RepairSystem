@@ -31,23 +31,22 @@ public class InsertCusServlet extends HttpServlet {
 	 private String customer_contacts;
 	 private String customer_email;
 	 
-		CustomerFunManage customTest =null;
+		
 	 
-	 
 
-	@Override
-	public void init() throws ServletException {
-		// TODO Auto-generated method stub
-		super.init();
-		 customTest = CustomerFunManage.getInstance();
-	}
-
-
-	@Override
-	public void init(ServletConfig config) throws ServletException {
-		// TODO Auto-generated method stub
-		super.init(config);
-	}
+//	@Override
+//	public void init() throws ServletException {
+//		// TODO Auto-generated method stub
+//		super.init();
+//		 customTest = CustomerFunManage.getInstance();
+//	}
+//
+//
+//	@Override
+//	public void init(ServletConfig config) throws ServletException {
+//		// TODO Auto-generated method stub
+//		super.init(config);
+//	}
 
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -90,8 +89,9 @@ public class InsertCusServlet extends HttpServlet {
 	                  customer_nature,  customer_unit,  customer_tel,
 	                  customer_phone,  customer_address, customer_postcode,
 	                  customer_contacts,  customer_email);
-			System.out.println("info:\n" + customer.getCustomer_email() + "info:\n" +customer.getCustomer_unit());
-			
+//			System.out.println("info:\n" + customer.getCustomer_email() + "info:\n" +customer.getCustomer_unit());
+			CustomerFunManage customTest =null;
+			customTest = CustomerFunManage.getInstance();
 			customTest.insertCus(customer);
 			
 //			
