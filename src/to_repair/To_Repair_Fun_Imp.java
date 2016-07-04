@@ -1,6 +1,7 @@
 package to_repair;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -66,7 +67,48 @@ public class To_Repair_Fun_Imp implements To_repair_Fun {
 
 	@Override
 	public void insertToRepair(To_repair_stament to_repair_stament) {
-		// TODO Auto-generated method stub
+		 Connection connection = null;
+	        PreparedStatement preparedStatement = null;
+
+	        try {
+	            connection = DbUtils.getConnection();
+	            String sql = "INSERT INTO to_repair VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+	            preparedStatement = connection.prepareStatement(sql);
+	            preparedStatement.setString(1, to_repair_stament.getTo_repair_number());
+	            preparedStatement.setString(2, to_repair_stament.getCustomer_number());
+	            preparedStatement.setString(3, to_repair_stament.getTo_repair_product_type());
+	            
+	            preparedStatement.setString(4, to_repair_stament.getTo_repair_mac_brand());
+	            preparedStatement.setString(5, to_repair_stament.getTo_repair_mac_type());
+	            preparedStatement.setString(6, to_repair_stament.getTo_repair_serial());
+	            preparedStatement.setString(7, to_repair_stament.getTo_repair_lack_part());
+	            
+	            preparedStatement.setString(8, to_repair_stament.getTo_repair_trouble_phen());
+	            preparedStatement.setString(9, to_repair_stament.getTo_repair_trouble_type());
+	            preparedStatement.setString(10, to_repair_stament.getTo_repair_facial_check());
+	            preparedStatement.setString(11,to_repair_stament.getTo_repair_start_cmd());
+	            
+	            preparedStatement.setString(8, to_repair_stament.getTo_repair_impo_files());
+	            preparedStatement.setString(9, to_repair_stament.getTo_repair_hdd());
+	            preparedStatement.setString(10, to_repair_stament.getTo_repair_pc());
+	            preparedStatement.setString(11,to_repair_stament.getTo_repair_ac());
+	            
+	            preparedStatement.setString(8, to_repair_stament.getTo_repair_battery());
+	            preparedStatement.setString(9, to_repair_stament.getTo_repair_cd_driver());
+	            preparedStatement.setString(10, to_repair_stament.getTo_repair_floppy());
+	            preparedStatement.setString(11,to_repair_stament.getTo_repair_time());
+	            preparedStatement.setString(10, to_repair_stament.getTo_repair_price());
+	            preparedStatement.setString(11,to_repair_stament.getTo_repair_state());
+	            
+	            
+	            preparedStatement.executeUpdate();
+
+	        } catch (SQLException e) {
+	            e.printStackTrace();
+	        } finally {
+	            DbUtils.closePrepareStatement(preparedStatement);
+	            DbUtils.closeConnection(connection);
+	        }
 		
 	}
 
