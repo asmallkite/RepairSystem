@@ -3,7 +3,7 @@
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 
-System.out.println("can send here " );
+System.out.println("FindCus,jsp is starting!! " );
 //System.out.println("can send here " + findCus_another.getCustomer_number());
 //Customer findCus_another = (Customer)request.getAttribute("findCus_another");
 %>
