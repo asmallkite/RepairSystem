@@ -4,6 +4,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.sql.Date;
 
+import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -18,7 +19,7 @@ public class InsertCusServlet extends HttpServlet {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	 private int customer_number = 2;
+	 private int customer_number;
 	 private String customer_id;
 	 private Date customer_send_mac;
 	 private String customer_nature;
@@ -29,11 +30,30 @@ public class InsertCusServlet extends HttpServlet {
 	 private String customer_postcode;
 	 private String customer_contacts;
 	 private String customer_email;
+	 
+		CustomerFunManage customTest =null;
+	 
+	 
+
+	@Override
+	public void init() throws ServletException {
+		// TODO Auto-generated method stub
+		super.init();
+		 customTest = CustomerFunManage.getInstance();
+	}
+
+
+	@Override
+	public void init(ServletConfig config) throws ServletException {
+		// TODO Auto-generated method stub
+		super.init(config);
+		int i;
+	}
 
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
+		
 		this.doPost(request, response);
 	}
 
@@ -43,8 +63,8 @@ public class InsertCusServlet extends HttpServlet {
 			response.setContentType("text/html;charset=UTF-8");
 			request.setCharacterEncoding("utf-8");
 			response.setCharacterEncoding("utf-8");
-//			System.out.println(request.getParameter("customer_number") + "ehhhhhhhhhhhhhhhhhhhhhhhhh");
 			customer_number = Integer.parseInt(request.getParameter("customer_number"));
+			System.out.println("the attention:\n\n\n" + request.getParameter("customer_number"));
 			customer_id = request.getParameter("customer_id");
 			//处理时间转换
 			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
@@ -71,7 +91,8 @@ public class InsertCusServlet extends HttpServlet {
 	                  customer_nature,  customer_unit,  customer_tel,
 	                  customer_phone,  customer_address, customer_postcode,
 	                  customer_contacts,  customer_email);
-			CustomerFunManage customTest = CustomerFunManage.getInstance();
+			System.out.println("info:\n" + customer.getCustomer_email() + "info:\n" +customer.getCustomer_unit());
+			
 			customTest.insertCus(customer);
 			
 //			
