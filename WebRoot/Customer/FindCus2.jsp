@@ -1,8 +1,12 @@
-<%@ page language="java" import="java.util.*" pageEncoding="ISO-8859-1"%>
-<%@ page import="CustomerManage.Customer" %>
+<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%@ page language="java" import="CustomerManage.Customer" pageEncoding="utf-8"%>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+
+System.out.println("can send here " );
+//System.out.println("can send here " + findCus_another.getCustomer_number());
+//Customer findCus_another = (Customer)request.getAttribute("findCus_another");
 %>
 
 <!DOCTYPE html>
@@ -169,9 +173,6 @@ div#footer {clear:both;text-align:center;}
 <div id="content">
 
 <form action="../findCusServlet" method="post">
-<%
-Customer findCus_another = (Customer)request.getAttribute("findCus_another");
-		 %>
 <table background="table13.jpg"   border="0" cellspacing="0">
 <tr>
   <td width="900" height="650">
@@ -197,65 +198,65 @@ Customer findCus_another = (Customer)request.getAttribute("findCus_another");
 
   
   <table width="589"" bordercolor="#66CCCC"  border="0">
-
 <tr>
   <th  bgcolor="#9AD0D8">客户编号:</th>
-  <td><input type="text" name="customer_number" value=<% findCus_another.getCustomer_number(); %>></td>
+  <td><input type="text" name="customer_number" value=<%=findCus_another.getCustomer_number()%>></td>
 </tr>
 <tr>
   <th  bgcolor="#9AD0D8">身份编号:</th>
-  <td><input type="text" name="customer_id" value=<% findCus_another.getCustomer_id(); %>></td>
+  <td><input type="text" name="customer_id" value=<%=findCus_another.getCustomer_id()%>></td>
 </tr>
 
 <tr>
   <th  bgcolor="#9AD0D8">客户送机时间:</th>
-  <td><input type="text" name="customer_send_mac" value=<% findCus_another.getCustomer_send_mac(); %>>></td>
+  <td><input type="text" name="customer_send_mac" value=<%=findCus_another.getCustomer_send_mac()%>>></td>
 </tr>
 
 <tr>
   <th height="68" bgcolor="#9AD0D8">客户性质:</th>
-  <td>  <input type="text" name="customer_nature" value=<% findCus_another.getCustomer_nature(); %>>  </td>
+  <td>  <input type="text" name="customer_nature" value=<%=findCus_another.getCustomer_nature()%>>  </td>
 </tr>
 
 <tr>
   <th  bgcolor="#9AD0D8">单位名称:</th>
-  <td><input type="text" name="customer_unit" value=<% findCus_another.getCustomer_unit(); %>></td>
+  <td><input type="text" name="customer_unit" value=<%=findCus_another.getCustomer_unit()%>></td>
 </tr>
 
 
 
 <tr>
   <th  bgcolor="#9AD0D8">客户座机:</th>
-  <td><input type="text" name="customer_tel" value=<% findCus_another.getCustomer_tel(); %>></td>
+  <td><input type="text" name="customer_tel" value=<%=findCus_another.getCustomer_tel()%>></td>
 </tr>
 
 <tr>
   <th  bgcolor="#9AD0D8">移动电话:</th>
-  <td><input type="text" name="customer_phone" value=<% findCus_another.getCustomer_phone(); %>></td>
+  <td><input type="text" name="customer_phone" value=<%=findCus_another.getCustomer_phone()%>></td>
 </tr>
 
 <tr>
   <th  bgcolor="#9AD0D8">客户地址:</th>
-  <td><input type="text" name="customer_address" value=<% findCus_another.getCustomer_address(); %>></td>
+  <td><input type="text" name="customer_address" value=<%=findCus_another.getCustomer_address()%>></td>
 </tr>
 
 <tr>
   <th  bgcolor="#9AD0D8">客户邮编:</th>
-  <td><input type="text" name="customer_postcode" value=<% findCus_another.getCustomer_postcode(); %>></td>
+  <td><input type="text" name="customer_postcode" value=<%=findCus_another.getCustomer_postcode()%>></td>
 </tr>
 
 
 <tr>
   <th bgcolor="#9AD0D8">联系人:</th>
-  <td ><input type="text" name="customer_contacts" value=<% findCus_another.getCustomer_contacts(); %>></td>
+  <td ><input type="text" name="customer_contacts" value=<%=findCus_another.getCustomer_contacts()%>></td>
 </tr>
 <tr>
   <th  bgcolor="#9AD0D8">email:</th>
-  <td style="width:350px"><input type="text" name="customer_email" value=<% findCus_another.getCustomer_email(); %>></td>
+  <td style="width:350px"><input type="text" name="customer_email" value=<%=findCus_another.getCustomer_email()%>></td>
 </tr>
 
   </table>
   </div>
+ 
     <div id=kong3>
   </div>
   <div>
@@ -270,10 +271,6 @@ Customer findCus_another = (Customer)request.getAttribute("findCus_another");
 
 
   </table>
-</div>
-
-
-
 </form>
 
 <div id="footer"></div>

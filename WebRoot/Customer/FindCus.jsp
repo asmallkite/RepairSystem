@@ -2,6 +2,10 @@
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+
+System.out.println("can send here " );
+//System.out.println("can send here " + findCus_another.getCustomer_number());
+//Customer findCus_another = (Customer)request.getAttribute("findCus_another");
 %>
 
 <!DOCTYPE html>
@@ -202,7 +206,7 @@ div#footer {clear:both;text-align:center;}
 
 <tr>
   <th  bgcolor="#9AD0D8">客户编号:</th>
-  <td><input type="text" name="customer_number"></td>
+  <td><input type="text" name="customer_number2"></td>
 </tr>
 <tr>
   <th  bgcolor="#9AD0D8">身份编号:</th>
@@ -277,9 +281,6 @@ div#footer {clear:both;text-align:center;}
 
 
   </table>
-</div>
-
-
 
 </form>
 
