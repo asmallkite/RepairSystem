@@ -13,7 +13,7 @@ import CustomerManage.CustomerFunManage;
 /**
  * Servlet implementation class DeleteServlet
  */
-@WebServlet("/DeleteServlet")
+//@WebServlet("/deleteServlet2")
 public class DeleteServlet2 extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 

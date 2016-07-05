@@ -196,6 +196,7 @@ div#footer {clear:both;text-align:center;}
 <div id="content">
 
 <form action="../insertCusServlet" method="post">
+<input type="hidden" name="Action" value="Insert_pager">
 <table background="table1.jpg"   border="0" cellspacing="0">
 <tr>
   <td width="900" height="650">
