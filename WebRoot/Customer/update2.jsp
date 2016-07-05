@@ -1,40 +1,17 @@
+<%@page import="CustomerManage.Customer"%>
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
-
-System.out.println("DeleCus,jsp is starting!! " );
-//System.out.println("can send here " + findCus_another.getCustomer_number());
-//Customer findCus_another = (Customer)request.getAttribute("findCus_another");
 %>
 
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <html>
 <head>
 <meta content="text/html" charset="utf-8">
 
-<script type="text/javascript">
-    function validate_required(field,alerttxt)
-    {
-    with (field)
-  {
-    if (value==null||value=="")
-    {
-      alert(alerttxt);return false
-    }
-  else {return true}
-    }
-}
 
-function validate_form(thisform)
-{
-with (thisform)
-  {
-  if (validate_required(customer_number,"客户编号未填写!")==false)
-    {customer_number.focus();return false}
-  }
-}
-</script>
 
 <style type="text/css">
     div#container{width:1900px}
@@ -56,9 +33,9 @@ div#footer {clear:both;text-align:center;}
 </style>
 </head>
 
-<body background="beijing.jpg" >
+<body background="/Repair/Customer/beijing.jpg" >
 <div id=top>
-<table background="top.jpg"   border="0" cellspacing="0">
+<table background="/Repair/Customer/top.jpg"   border="0" cellspacing="0">
 <tr>
   <td width="1900" height="160">
  <div id=top1></div>
@@ -68,7 +45,7 @@ div#footer {clear:both;text-align:center;}
   <div id=top12>
   
   <table   border="0" cellspacing="0">
-<link rel="stylesheet" href="css/style.css" type="text/css" media="screen">
+<link rel="stylesheet" href="/Repair/Customer/css/style.css" type="text/css" media="screen">
 
 <div class="example">
     <ul id="nav">
@@ -157,6 +134,7 @@ div#footer {clear:both;text-align:center;}
 </div>
 
 <div id="container">
+ <form action="UpdateServlet" method="post">
 
 <div id="header">
 <h1></h1>
@@ -169,10 +147,7 @@ div#footer {clear:both;text-align:center;}
 </ul>
 
 </div>
-<div id="content">
-
-<form action="../deleteServlet" method="post">
-<table background="table16.jpg"   border="0" cellspacing="0">
+<div id="content"><table background="/Repair/Customer/table18.jpg"   border="0" cellspacing="0">
 <tr>
   <td width="900" height="650">
   
@@ -195,97 +170,80 @@ div#footer {clear:both;text-align:center;}
   </div>
   <div id=kong2;>
 
-  
-<p><font size="4" face="Verdana" color="#66CCCC" >
-      <B>请输入要删除的客户编号:</B>
-    </font>   
-<input type="text" name="customer_number">
-<input type="submit" name="Submit" value="查询" background-color=" #9AD0D8" style="height:40px;width:80px; background:#9AD0D8"> 
-</p>
-  <table width="589"" bordercolor="#66CCCC"  border="0">
-
+ 
+   <table width="589"" bordercolor="#66CCCC"  border="0">
+<% Customer Display = (Customer)request.getAttribute("findCus_another"); %>
 <tr>
   <th  bgcolor="#9AD0D8">客户编号:</th>
-  <td><input type="text" name="customer_number2"></td>
+  <td><input type="text" name="customer_number" value =<%=Display.getCustomer_number() %>></td>
 </tr>
 <tr>
   <th  bgcolor="#9AD0D8">身份编号:</th>
-  <td><input type="text" name="customer_id"></td>
+  <td><input type="text" name="customer_id" value = <%=Display.getCustomer_id() %>></td>
 </tr>
 
 <tr>
   <th  bgcolor="#9AD0D8">客户送机时间:</th>
-  <td><input type="text" name="customer_send_mac"></td>
+  <td><input type="text" name="customer_send_mac" value = <%=Display.getCustomer_send_mac() %>></td>
 </tr>
 
 <tr>
   <th height="68" bgcolor="#9AD0D8">客户性质:</th>
-  <td>  <select name="customer_nature" id="customer_nature">   
-        <option value="1">家庭用户</option>   
-        <option value="2">单位用户</option>   
-        <option value="3">代理商</option>   
-         <option value="4">签约用户</option>
-      </select>   </td>
+  <td> <input type="text" name="customer_nature" value = <%=Display.getCustomer_nature() %>>  </td>
 </tr>
-
 <tr>
   <th  bgcolor="#9AD0D8">单位名称:</th>
-  <td><input type="text" name="customer_unit"></td>
+  <td><input type="text" name="customer_unit" value = <%=Display.getCustomer_unit() %>></td>
 </tr>
-
-
-
 <tr>
   <th  bgcolor="#9AD0D8">客户座机:</th>
-  <td><input type="text" name="customer_tel"></td>
+  <td><input type="text" name="customer_tel" value = <%=Display.getCustomer_tel() %>></td>
 </tr>
 
 <tr>
   <th  bgcolor="#9AD0D8">移动电话:</th>
-  <td><input type="text" name="customer_phone"></td>
+  <td><input type="text" name="customer_phone" value = <%=Display.getCustomer_phone() %>></td>
 </tr>
 
 <tr>
   <th  bgcolor="#9AD0D8">客户地址:</th>
-  <td><input type="text" name="customer_address"></td>
+  <td><input type="text" name="customer_address" value = <%=Display.getCustomer_address() %>></td>
 </tr>
 
 <tr>
   <th  bgcolor="#9AD0D8">客户邮编:</th>
-  <td><input type="text" name="customer_postcode"></td>
+  <td><input type="text" name="customer_postcode" value = <%=Display.getCustomer_id() %>></td>
 </tr>
 
 
 <tr>
   <th bgcolor="#9AD0D8">联系人:</th>
-  <td ><input type="text" name="customer_contacts"></td>
+  <td ><input type="text" name="customer_contacts" value = <%=Display.getCustomer_contacts() %>></td>
 </tr>
 <tr>
-  <th  bgcolor="#9AD0D8">email:</th>
-  <td style="width:350px"><input type="text" name="customer_email"></td>
+  <th bgcolor="#9AD0D8">email:</th>
+  <td ><input type="text" name="customer_email" value = <%=Display.getCustomer_email() %>></td>
 </tr>
 
   </table>
   </div>
     <div id=kong3>
   </div>
-  <div>
+   <div>
     <div id=Button1>
      <div id=Button3></div>
-      
-  </div>
     
-  
-  <div id=Button2>
- 
-
-
+       <input type="submit" name="action" value="修改"  onclick="alert('修改成功')" background-color=" #9AD0D8" style="height:40px;width:80px; background:#9AD0D8"/>
+       
+  </div>
+  </div> 
+  <div id=Button2></div>
   </table>
-
-</form>
-
+</div>
+  </form>
+ 
 <div id="footer"></div>
-<table background="123.jpg" border="0">
+<table background="/Repair/Customer/123.jpg" border="0">
 <tr>
 <td width="500" height="200">
 

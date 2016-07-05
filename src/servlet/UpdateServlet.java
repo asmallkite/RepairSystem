@@ -13,7 +13,6 @@ import CustomerManage.CustomerFunManage;
 /**
  * Servlet implementation class UpdateServlet
  */
-@WebServlet("/UpdateServlet")
 public class UpdateServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private int customer_number;

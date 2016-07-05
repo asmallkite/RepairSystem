@@ -3,7 +3,7 @@
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 
-System.out.println("DeleCus,jsp is starting!! " );
+System.out.println("update。jsp,jsp is starting!! " );
 //System.out.println("can send here " + findCus_another.getCustomer_number());
 //Customer findCus_another = (Customer)request.getAttribute("findCus_another");
 %>
@@ -171,8 +171,8 @@ div#footer {clear:both;text-align:center;}
 </div>
 <div id="content">
 
-<form action="../deleteServlet" method="post">
-<table background="table16.jpg"   border="0" cellspacing="0">
+<form action="../updateServlet2" method="post">
+<table background="table19.jpg"   border="0" cellspacing="0">
 <tr>
   <td width="900" height="650">
   
@@ -197,7 +197,7 @@ div#footer {clear:both;text-align:center;}
 
   
 <p><font size="4" face="Verdana" color="#66CCCC" >
-      <B>请输入要删除的客户编号:</B>
+      <B>请输入要修改的客户编号:</B>
     </font>   
 <input type="text" name="customer_number">
 <input type="submit" name="Submit" value="查询" background-color=" #9AD0D8" style="height:40px;width:80px; background:#9AD0D8"> 
