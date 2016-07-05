@@ -61,7 +61,7 @@ public class FindCusServlet extends HttpServlet {
 		System.out.println("执行玩查找工作`````········......");
 		request.setAttribute("findCus_another", findCus);
 //		System.out.println("执行玩setAttribute········......");
-		RequestDispatcher dispatcher = request.getRequestDispatcher("Customer/FindCus2.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("Customer/FindCus.jsp");
 //		System.out.println("执行玩RequestDispatcher dispatcher = request.getRequestDispatcher......");
 		dispatcher.forward(request, response);
 //		System.out.println("执行wanbi  你成功了····················");

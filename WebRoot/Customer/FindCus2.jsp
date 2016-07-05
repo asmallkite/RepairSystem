@@ -11,28 +11,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <head>
 <meta content="text/html" charset="utf-8">
 
-<script type="text/javascript">
-    function validate_required(field,alerttxt)
-    {
-    with (field)
-  {
-    if (value==null||value=="")
-    {
-      alert(alerttxt);return false
-    }
-  else {return true}
-    }
-}
 
-function validate_form(thisform)
-{
-with (thisform)
-  {
-  if (validate_required(customer_number,"客户编号未填写!")==false)
-    {customer_number.focus();return false}
-  }
-}
-</script>
 
 <style type="text/css">
     div#container{width:1900px}
@@ -54,9 +33,9 @@ div#footer {clear:both;text-align:center;}
 </style>
 </head>
 
-<body background="beijing.jpg" >
+<body background="/Repair/Customer/beijing.jpg" >
 <div id=top>
-<table background="top.jpg"   border="0" cellspacing="0">
+<table background="/Repair/Customer/top.jpg"   border="0" cellspacing="0">
 <tr>
   <td width="1900" height="160">
  <div id=top1></div>
@@ -66,7 +45,7 @@ div#footer {clear:both;text-align:center;}
   <div id=top12>
   
   <table   border="0" cellspacing="0">
-<link rel="stylesheet" href="<%=path%>/css/style.css" type="text/css" media="screen">
+<link rel="stylesheet" href="/Repair/Customer/css/style.css" type="text/css" media="screen">
 
 <div class="example">
     <ul id="nav">
@@ -167,7 +146,7 @@ div#footer {clear:both;text-align:center;}
 </ul>
 
 </div>
-<div id="content"><table background="table13.jpg"   border="0" cellspacing="0">
+<div id="content"><table background="/Repair/Customer/table13.jpg"   border="0" cellspacing="0">
 <tr>
   <td width="900" height="650">
   
@@ -191,27 +170,22 @@ div#footer {clear:both;text-align:center;}
   <div id=kong2;>
 
   <form action="submitpage.htm" onsubmit="return validate_form(this)" method="post">
-<p><font size="4" face="Verdana" color="#66CCCC" >
-      <B>请输入客户编号:</B>
-    </font>   
-<input type="text" name="customer_number2">
-<input type="submit" name="Submit" value="结果如下" background-color=" #9AD0D8" style="height:40px;width:80px; background:#9AD0D8"> 
-</p>
+
 </form>
   <table width="589"" bordercolor="#66CCCC"  border="0">
 <% Customer Display = (Customer)request.getAttribute("findCus_another"); %>
 <tr>
   <th  bgcolor="#9AD0D8">客户编号:</th>
-  <td><input type="text" name="customer_number" value =12></td>
+  <td><input type="text" name="customer_number" value =<%=Display.getCustomer_number() %>></td>
 </tr>
 <tr>
   <th  bgcolor="#9AD0D8">身份编号:</th>
-  <td><input type="text" name="customer_id"></td>
+  <td><input type="text" name="customer_id" value = <%=Display.getCustomer_id() %>></td>
 </tr>
 
 <tr>
   <th  bgcolor="#9AD0D8">客户送机时间:</th>
-  <td><input type="text" name="customer_send_mac"></td>
+  <td><input type="text" name="customer_send_mac" value = <%=Display.getCustomer_send_mac() %>></td>
 </tr>
 
 <tr>
@@ -226,35 +200,39 @@ div#footer {clear:both;text-align:center;}
 
 <tr>
   <th  bgcolor="#9AD0D8">单位名称:</th>
-  <td><input type="text" name="customer_unit"></td>
+  <td><input type="text" name="customer_unit" value = <%=Display.getCustomer_unit() %>></td>
 </tr>
 
 
 
 <tr>
   <th  bgcolor="#9AD0D8">客户座机:</th>
-  <td><input type="text" name="customer_tel"></td>
+  <td><input type="text" name="customer_tel" value = <%=Display.getCustomer_tel() %>></td>
 </tr>
 
 <tr>
   <th  bgcolor="#9AD0D8">移动电话:</th>
-  <td><input type="text" name="customer_phone"></td>
+  <td><input type="text" name="customer_phone" value = <%=Display.getCustomer_phone() %>></td>
 </tr>
 
 <tr>
   <th  bgcolor="#9AD0D8">客户地址:</th>
-  <td><input type="text" name="customer_address"></td>
+  <td><input type="text" name="customer_address" value = <%=Display.getCustomer_address() %>></td>
 </tr>
 
 <tr>
   <th  bgcolor="#9AD0D8">客户邮编:</th>
-  <td><input type="text" name="customer_postcode"></td>
+  <td><input type="text" name="customer_postcode" value = <%=Display.getCustomer_id() %>></td>
 </tr>
 
 
 <tr>
   <th bgcolor="#9AD0D8">联系人:</th>
-  <td ><input type="text" name="customer_contacts"></td>
+  <td ><input type="text" name="customer_contacts" value = <%=Display.getCustomer_contacts() %>></td>
+</tr>
+<tr>
+  <th bgcolor="#9AD0D8">email:</th>
+  <td ><input type="text" name="customer_email" value = <%=Display.getCustomer_email() %>></td>
 </tr>
 
   </table>
@@ -275,7 +253,7 @@ div#footer {clear:both;text-align:center;}
   </table>
 </div>
 <div id="footer"></div>
-<table background="<%=path%>/top.jpg" border="0">
+<table background="/Repair/Customer/123.jpg" border="0">
 <tr>
 <td width="500" height="200">
 
