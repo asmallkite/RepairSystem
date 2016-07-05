@@ -60,29 +60,15 @@ public class FindCusServlet extends HttpServlet {
 		findCus = customTest.getCusByNo(cus_number);
 		System.out.println("执行玩查找工作`````········......");
 		request.setAttribute("findCus_another", findCus);
-		System.out.println("执行玩setAttribute········......");
+//		System.out.println("执行玩setAttribute········......");
 		RequestDispatcher dispatcher = request.getRequestDispatcher("Customer/FindCus2.jsp");
-		System.out.println("执行玩RequestDispatcher dispatcher = request.getRequestDispatcher......");
-		dispatcher.include(request, response);
-		System.out.println("执行wanbi  你成功了····················");
+//		System.out.println("执行玩RequestDispatcher dispatcher = request.getRequestDispatcher......");
+		dispatcher.forward(request, response);
+//		System.out.println("执行wanbi  你成功了····················");
+		
 	
 		
 		}
-		
-		
-		
-//		System.out.println("info:\n" + findCus.getCustomer_address() +"\n\n");
-//		request.setAttribute("findCus_another", findCus);
-//		RequestDispatcher dispatcher = request.getRequestDispatcher("../Custmer/findCus2.jsp");
-//		System.out.println("no 404\n\n" + findCus.getCustomer_contacts() +"\n\n");
-//		try {
-//			dispatcher.forward(request, response);
-//		}catch (java.lang.NullPointerException e){
-//			 System.out.println("NullPointerException: attribute expected in view");
-//		}
-//		System.out.println("no forwartd\n\n" + findCus.getCustomer_contacts() +"\n\n");
-		
-		
-		
+	
 	}
 

@@ -5,7 +5,8 @@ String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
 
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <html>
 <head>
 <meta content="text/html" charset="utf-8">
@@ -65,7 +66,7 @@ div#footer {clear:both;text-align:center;}
   <div id=top12>
   
   <table   border="0" cellspacing="0">
-<link rel="stylesheet" href="css/style.css" type="text/css" media="screen">
+<link rel="stylesheet" href="<%=path%>/css/style.css" type="text/css" media="screen">
 
 <div class="example">
     <ul id="nav">
@@ -201,7 +202,7 @@ div#footer {clear:both;text-align:center;}
 <% Customer Display = (Customer)request.getAttribute("findCus_another"); %>
 <tr>
   <th  bgcolor="#9AD0D8">客户编号:</th>
-  <td><input type="text" name="customer_number" value = <%=Display.getCustomer_number() %>></td>
+  <td><input type="text" name="customer_number" value =12></td>
 </tr>
 <tr>
   <th  bgcolor="#9AD0D8">身份编号:</th>
@@ -274,7 +275,7 @@ div#footer {clear:both;text-align:center;}
   </table>
 </div>
 <div id="footer"></div>
-<table background="123.jpg" border="0">
+<table background="<%=path%>/top.jpg" border="0">
 <tr>
 <td width="500" height="200">
 
