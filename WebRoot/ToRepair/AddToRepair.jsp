@@ -215,7 +215,8 @@ div#footer {clear:both;text-align:center;}
 
 
   <div class="mes" id=kong2;>
-<form>
+<form action="../addToRepairServlet?service=add" target="_self"
+			name="userForm" method="post">
   <table id="mytable" width="589" bordercolor="#66CCCC"  border="0">
   <br>
   <br>
@@ -223,7 +224,7 @@ div#footer {clear:both;text-align:center;}
 
 <tr>
   <th bgcolor="#9AD0D8">维修编号:</td>
-  <td><input type="text" name="repair_number" id="repair_number" id="repair_number"><span style="color:red">*</span></td>
+  <td><input type="text" name="to_repair_number" id="repair_number" id="repair_number"><span style="color:red">*</span></td>
 </tr>
 
 <tr>
@@ -283,6 +284,10 @@ div#footer {clear:both;text-align:center;}
         <option value="1">固定性故障</option>   
         <option value="2">间隙性故障</option>   
       </select> <span style="color:red">*</span>  </td>
+</tr>
+
+ <th  bgcolor="#9AD0D8">外观检查：</th>
+  <td style="width:350px"><input type="text" name="to_repair_facial_check" id="to_repair_facial_check"></td>
 </tr>
 
   <th  bgcolor="#9AD0D8">开机口令：</th>

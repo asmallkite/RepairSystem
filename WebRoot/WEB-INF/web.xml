@@ -33,10 +33,6 @@
     <servlet-name>DeleteServlet2</servlet-name>
     <url-pattern>/deleteServlet2</url-pattern>
   </servlet-mapping>
-  
-  
-  
-  
   <servlet>
     <servlet-name>UpdateServlet</servlet-name>
     <servlet-class>servlet.UpdateServlet</servlet-class>
@@ -45,24 +41,26 @@
     <servlet-name>UpdateServlet</servlet-name>
     <url-pattern>/updateServlet</url-pattern>
   </servlet-mapping>
-    <servlet>
+  <servlet>
     <servlet-name>UpdateServlet2</servlet-name>
     <servlet-class>servlet.UpdateServlet2</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>UpdateServlet2</servlet-name>
     <url-pattern>/updateServlet2</url-pattern>
-     </servlet-mapping>
-    
+  </servlet-mapping>
   
   
   
   
-  
-  
-  
-  
-  
+    <servlet>
+    <servlet-name>AddToRepairServlet</servlet-name>
+    <servlet-class>to_pair_servlet.AddToRepairServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AddToRepairServlet</servlet-name>
+    <url-pattern>/addToRepairServlet</url-pattern>
+  </servlet-mapping>
   
   
   <welcome-file-list>
