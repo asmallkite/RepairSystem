@@ -72,7 +72,7 @@ public class To_Repair_Fun_Imp implements To_repair_Fun {
 
 	        try {
 	            connection = DbUtils.getConnection();
-	            String sql = "INSERT INTO to_repair VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+	            String sql = "INSERT INTO to_repair VALUES(?,?,?,  ?,?,?,  ?,?,?,  ?,?,?, ?,?,?, ?,?,?, ?,?,?)";
 	            preparedStatement = connection.prepareStatement(sql);
 	            preparedStatement.setString(1, to_repair_stament.getTo_repair_number());
 	            preparedStatement.setString(2, to_repair_stament.getCustomer_number());
@@ -88,19 +88,18 @@ public class To_Repair_Fun_Imp implements To_repair_Fun {
 	            preparedStatement.setString(10, to_repair_stament.getTo_repair_facial_check());
 	            preparedStatement.setString(11,to_repair_stament.getTo_repair_start_cmd());
 	            
-	            preparedStatement.setString(8, to_repair_stament.getTo_repair_impo_files());
-	            preparedStatement.setString(9, to_repair_stament.getTo_repair_hdd());
-	            preparedStatement.setString(10, to_repair_stament.getTo_repair_pc());
-	            preparedStatement.setString(11,to_repair_stament.getTo_repair_ac());
+	            preparedStatement.setString(12, to_repair_stament.getTo_repair_impo_files());
+	            preparedStatement.setString(13, to_repair_stament.getTo_repair_hdd());
+	            preparedStatement.setString(14, to_repair_stament.getTo_repair_pc());
+	            preparedStatement.setString(15,to_repair_stament.getTo_repair_ac());
 	            
-	            preparedStatement.setString(8, to_repair_stament.getTo_repair_battery());
-	            preparedStatement.setString(9, to_repair_stament.getTo_repair_cd_driver());
-	            preparedStatement.setString(10, to_repair_stament.getTo_repair_floppy());
-	            preparedStatement.setString(11,to_repair_stament.getTo_repair_time());
-	            preparedStatement.setString(10, to_repair_stament.getTo_repair_price());
-	            preparedStatement.setString(11,to_repair_stament.getTo_repair_state());
-	            
-	            
+	            preparedStatement.setString(16, to_repair_stament.getTo_repair_battery());
+	            preparedStatement.setString(17, to_repair_stament.getTo_repair_cd_driver());
+	            preparedStatement.setString(18, to_repair_stament.getTo_repair_floppy());
+	            preparedStatement.setString(19,to_repair_stament.getTo_repair_time());
+	            preparedStatement.setString(20, to_repair_stament.getTo_repair_price());
+	            preparedStatement.setString(21,to_repair_stament.getTo_repair_state());
+	      
 	            preparedStatement.executeUpdate();
 
 	        } catch (SQLException e) {

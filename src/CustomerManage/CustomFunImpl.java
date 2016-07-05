@@ -99,8 +99,9 @@ public class CustomFunImpl implements CustomFun {
 	    }
 //此功能为测试
 	    @Override
-	    public void updateCusByNo(Customer customer) {
-	     this.insertCus(customer);
+	    public void updateCusByNo(int customer_number) {
+	     this.deleteCusByNo(customer_number);
+	     
 	    }
 
 }

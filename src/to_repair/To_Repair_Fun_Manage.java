@@ -27,12 +27,8 @@ public class To_Repair_Fun_Manage {
 	private  To_Repair_Fun_Manage() {
 	}
 	
-	/**
-	 * 通过编号查询
-	 * @param customer_number
-	 * @return
-	 */
-	public To_repair_stament getCusByNo(String to_repair_number){
+	
+	public To_repair_stament getToRepairByNo(String to_repair_number){
 		To_repair_stament to_repair_stament = null;
 		Connection connection = null;
 		try{
@@ -57,13 +53,13 @@ public class To_Repair_Fun_Manage {
 	 * 插入用户
 	 * @param customer
 	 */
-	public void insertCus(Customer customer){
+	public void insertToRepair(To_repair_stament to_repair_stament){
 		Connection connection = null;
 		try{
 			connection = DbUtils.getConnection();
-			CustomFunImpl customFunImpl = new CustomFunImpl(connection);
+			To_Repair_Fun_Imp to_Repair_Fun_Imp = new To_Repair_Fun_Imp(connection);
 			DbUtils.beginTransaction(connection);
-			customFunImpl.insertCus(customer);
+			to_Repair_Fun_Imp.insertToRepair(to_repair_stament);
 			DbUtils.commit(connection);
 	} catch (ServiceException e) {
 		throw e;
@@ -76,13 +72,13 @@ public class To_Repair_Fun_Manage {
 	}
 	}
 	
-	public void deleteCusByNo(int customer_number){
+	public void deleteToRepairByNo(String to_repair_number){
 		Connection connection = null;
 		try{
 			connection = DbUtils.getConnection();
-			CustomFunImpl customFunImpl = new CustomFunImpl(connection);
+			To_Repair_Fun_Imp to_Repair_Fun_Imp = new To_Repair_Fun_Imp(connection);
 			DbUtils.beginTransaction(connection);
-			customFunImpl.deleteCusByNo(customer_number);
+			to_Repair_Fun_Imp.deleteToRepairByNo(to_repair_number);
 			DbUtils.commit(connection);
 	} catch (ServiceException e) {
 		throw e;
@@ -98,7 +94,7 @@ public class To_Repair_Fun_Manage {
 	
 	
 	
-	 public void updateCusByNo(Customer customer) {
-	     this.insertCus(customer);
+	 public void updateCusByNo(String to_repair_number) {
+	     this.deleteToRepairByNo(to_repair_number);
 	    }
 }
