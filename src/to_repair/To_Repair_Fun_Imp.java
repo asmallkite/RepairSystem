@@ -133,6 +133,9 @@ public class To_Repair_Fun_Imp implements To_repair_Fun {
 
 	@Override
 	public void updateToRepairByNo(String to_repair_number) {
+		To_repair_stament to_repair_stament = null; //获取对象实例
+		to_repair_stament = getToRepairByNo(to_repair_number); //查询得到实例
+		insertToRepair(to_repair_stament);//插入对象实例
 		
 		
 	}

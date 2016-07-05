@@ -95,6 +95,23 @@ public class To_Repair_Fun_Manage {
 	
 	
 	 public void updateCusByNo(String to_repair_number) {
-	     this.deleteToRepairByNo(to_repair_number);
+		 Connection connection = null;
+			try{
+				connection = DbUtils.getConnection();
+				To_Repair_Fun_Imp to_Repair_Fun_Imp = new To_Repair_Fun_Imp(connection);
+				DbUtils.beginTransaction(connection);
+				to_Repair_Fun_Imp.updateToRepairByNo(to_repair_number);
+				DbUtils.commit(connection);
+		} catch (ServiceException e) {
+			throw e;
+		} catch (Exception e) {
+			DbUtils.rollback(connection);
+			throw new ServiceException("插入用户错误", e);
+			//e.printStackTrace();
+		} finally {
+			DbUtils.closeConnection(connection);
+		}
+			
+	     
 	    }
 }
