@@ -67,6 +67,19 @@ public class AddToRepairServlet extends HttpServlet {
 			RequestDispatcher dispatcher = request.getRequestDispatcher("Customer/Test.jsp");
 			
 			dispatcher.forward(request, response);
+		}else if(service.equals("find")){
+			String get_number = request.getParameter("repair_number");
+			System.out.println("传进servlet了~~~~~~~~~~~~~~~~~~~~~~~~~~");
+			To_Repair_Fun_Manage to_Repair_Fun_Manage = To_Repair_Fun_Manage.getInstance();
+			To_repair_stament a_re_sta = to_Repair_Fun_Manage.getToRepairByNo(get_number);
+			request.setAttribute("to_and_to", a_re_sta);
+			RequestDispatcher dispatcher = request.getRequestDispatcher("ToRepair/FindToRepair2.jsp");
+			dispatcher.forward(request, response);
+		}else if(service.equals("find2")){
+RequestDispatcher dispatcher = request.getRequestDispatcher("Customer/Test.jsp");
+			
+			dispatcher.forward(request, response);
+			
 		}
 		
 	}
