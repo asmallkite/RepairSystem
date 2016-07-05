@@ -134,6 +134,7 @@ div#footer {clear:both;text-align:center;}
 </div>
 
 <div id="container">
+ <form action="deleteServlet" method="post">
 
 <div id="header">
 <h1></h1>
@@ -169,10 +170,8 @@ div#footer {clear:both;text-align:center;}
   </div>
   <div id=kong2;>
 
-  <form action="submitpage.htm" onsubmit="return validate_form(this)" method="post">
-
-</form>
-  <table width="589"" bordercolor="#66CCCC"  border="0">
+ 
+   <table width="589"" bordercolor="#66CCCC"  border="0">
 <% Customer Display = (Customer)request.getAttribute("findCus_another"); %>
 <tr>
   <th  bgcolor="#9AD0D8">客户编号:</th>
@@ -190,21 +189,12 @@ div#footer {clear:both;text-align:center;}
 
 <tr>
   <th height="68" bgcolor="#9AD0D8">客户性质:</th>
-  <td>  <select name="customer_nature" id="customer_nature">   
-        <option value="1">家庭用户</option>   
-        <option value="2">单位用户</option>   
-        <option value="3">代理商</option>   
-         <option value="4">签约用户</option>
-      </select>   </td>
+  <td> <input type="text" name="customer_nature" value = <%=Display.getCustomer_nature() %>>  </td>
 </tr>
-
 <tr>
   <th  bgcolor="#9AD0D8">单位名称:</th>
   <td><input type="text" name="customer_unit" value = <%=Display.getCustomer_unit() %>></td>
 </tr>
-
-
-
 <tr>
   <th  bgcolor="#9AD0D8">客户座机:</th>
   <td><input type="text" name="customer_tel" value = <%=Display.getCustomer_tel() %>></td>
@@ -239,19 +229,17 @@ div#footer {clear:both;text-align:center;}
   </div>
     <div id=kong3>
   </div>
-  <div>
+   <div>
     <div id=Button1>
      <div id=Button3></div>
-      
+       <input type="submit" name="Submit" value="删除" background-color=" #9AD0D8" style="height:40px;width:80px; background:#9AD0D8"/>
   </div>
-    
-  
-  <div id=Button2>
- 
-
-
+  </div> 
+  <div id=Button2></div>
   </table>
 </div>
+  </form>
+ 
 <div id="footer"></div>
 <table background="/Repair/Customer/123.jpg" border="0">
 <tr>

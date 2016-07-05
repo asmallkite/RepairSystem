@@ -17,6 +17,14 @@
     <servlet-name>FindCusServlet</servlet-name>
     <url-pattern>/findCusServlet</url-pattern>
   </servlet-mapping>
+   <servlet>
+    <servlet-name>DeleteServlet</servlet-name>
+    <servlet-class>servlet.DeleteServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DeleteServlet</servlet-name>
+    <url-pattern>/deleteServlet</url-pattern>
+  </servlet-mapping>
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
     <welcome-file>index.htm</welcome-file>

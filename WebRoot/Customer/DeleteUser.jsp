@@ -1,4 +1,4 @@
-<%@ page language="java" import="java.util.*" pageEncoding="ISO-8859-1"%>
+<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -262,6 +262,7 @@ div#footer {clear:both;text-align:center;}
     <div id=Button1>
      <div id=Button3></div>
        <input type="button" name="Submit" value="删除" background-color=" #9AD0D8" style="height:40px;width:80px; background:#9AD0D8"/>
+  </div>
   </div>
     
   

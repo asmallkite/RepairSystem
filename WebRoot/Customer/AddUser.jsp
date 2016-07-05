@@ -8,6 +8,55 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <html>
 <head>
 <meta content="text/html" charset="utf-8">
+
+
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+function check()
+{
+	var customer_id_check=document.getElementById("customer_id").value;
+	var arg1 = /^[1-9]\d{7}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{3}$/;
+	var arg2 = /^[1-9]\d{5}[1-9]\d{3}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])((\d{4})|\d{3}[A-Z])$/;
+	var customer_send_mac_check=document.getElementById("customer_send_mac").value;
+  var customer_tel_check=document.getElementById("customer_tel").value;
+  var customer_phone_check=document.getElementById("customer_phone").value;
+  var pass_identify=0;
+
+	if(customer_id_check.length==0)
+	{
+		alert("身份编号未填写");
+    pass_identify++;
+	}
+	else if(customer_id_check.match(arg1) == null && customer_id_check.match(arg2) == null)
+	{
+		alert("身份编号不合法");
+    pass_identify++;
+	}
+
+  if(customer_send_mac_check.length!=""&&customer_send_mac_check.match(/^(\d{1,4})(-|\/)(\d{1,2})\2(\d{1,2})$/)==null)
+  {
+		alert("日期不合法");
+    pass_identify++;
+   }
+   
+  if(customer_tel_check.length!=0&&customer_tel_check.match(/^\d{3}-\d{8}|\d{4}-\d{7}$/)==null)
+  {
+    alert("输入电话号码有误");
+    pass_identify++;
+  }
+
+  if(customer_phone_check.length!=0&&customer_phone_check.match(/^\d13\d{9}$/)==null)
+  {
+    alert("输入手机号码有误");
+    pass_identify++;
+  }
+
+  if(pass_identify==0)
+    alert("添加成功");
+}
+//-->
+</SCRIPT>
+
 <style type="text/css">
 div#container{width:1900px}
 div#header {}
@@ -171,65 +220,70 @@ div#footer {clear:both;text-align:center;}
   <div id=kong2;>
   <table width="589"" bordercolor="#66CCCC"  border="0">
 
+<br>
+<br>
+<br>
+<br>
+
 <tr>
   <th  bgcolor="#9AD0D8">客户编号:</th>
-  <td><input type="text" name="customer_number"></td>
+  <td><input type="text" name="customer_number" id="customer_number"></td>
 </tr>
 <tr>
   <th  bgcolor="#9AD0D8">身份编号:</th>
-  <td><input type="text" name="customer_id"><span style="color:red">*</span></td>
+  <td><input type="text" name="customer_id" id="customer_id"><span style="color:red">*</span></td>
 </tr>
 
 <tr>
-  <th  bgcolor="#9AD0D8">客户送机时间:</th>
-  <td><input type="text" name="customer_send_mac"></td>
+  <th  bgcolor="#9AD0D8">客户送机时间:(例：2016-11-11)</th>
+  <td><input type="text" name="customer_send_mac" id="customer_send_mac"></td>
 </tr>
 
 <tr>
-  <th height="68" bgcolor="#9AD0D8">客户性质:</th>
-  <td>  <select name="customer_nature" >   
-        <option value="家庭用户">家庭用户</option>   
-        <option value="单位用户">单位用户</option>   
-        <option value="代理商" selected="selected">代理商</option>   
-         <option value="签约用户">签约用户</option>
+  <th height="48" bgcolor="#9AD0D8">客户性质:</th>
+  <td>  <select name="customer_nature" id="customer_nature" id="customer_nature">   
+        <option value="1">家庭用户</option>   
+        <option value="2">单位用户</option>   
+        <option value="3">代理商</option>   
+         <option value="4">签约用户</option>
       </select>   </td>
 </tr>
 
 <tr>
   <th  bgcolor="#9AD0D8">单位名称:</th>
-  <td><input type="text" name="customer_unit"></td>
+  <td><input type="text" name="customer_unit" id="customer_unit"></td>
 </tr>
 
 
 
 <tr>
   <th  bgcolor="#9AD0D8">客户座机:</th>
-  <td><input type="text" name="customer_tel"></td>
+  <td><input type="text" name="customer_tel" id="customer_tel"></td>
 </tr>
 
 <tr>
   <th  bgcolor="#9AD0D8">移动电话:</th>
-  <td><input type="text" name="customer_phone"></td>
+  <td><input type="text" name="customer_phone" id=customer_phone></td>
 </tr>
 
 <tr>
   <th  bgcolor="#9AD0D8">客户地址:</th>
-  <td><input type="text" name="customer_address"></td>
+  <td><input type="text" name="customer_address" id=customer_address></td>
 </tr>
 
 <tr>
   <th  bgcolor="#9AD0D8">客户邮编:</th>
-  <td><input type="text" name="customer_postcode"></td>
+  <td><input type="text" name="customer_postcode" id="customer_postcode"></td>
 </tr>
 
 
 <tr>
   <th bgcolor="#9AD0D8">联系人:</th>
-  <td ><input type="text" name="customer_contacts"></td>
+  <td ><input type="text" name="customer_contacts" id="customer_contacts"></td>
 </tr>
 <tr>
   <th  bgcolor="#9AD0D8">email:</th>
-  <td style="width:350px"><input type="text" name="customer_email"></td>
+  <td style="width:350px"><input type="text" name="customer_email" id="customer_email"></td>
 </tr>
   </table>
   </div>
@@ -238,7 +292,7 @@ div#footer {clear:both;text-align:center;}
   <div>
     <div id=Button1>
      <div id=Button3></div>
-       <input type="submit" name="Submit" value="确认" background-color=" #9AD0D8" style="height:40px;width:80px; background:#9AD0D8"/>
+       <input type="submit" name="Submit" value="确认" onclick=check() background-color=" #9AD0D8" style="height:40px;width:80px; background:#9AD0D8"/>
   </div>
   </div>
   
