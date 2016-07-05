@@ -134,7 +134,7 @@ div#footer {clear:both;text-align:center;}
 </div>
 
 <div id="container">
- <form action="deleteServlet" method="post">
+ <form action="deleteServlet2" method="post">
 
 <div id="header">
 <h1></h1>
@@ -147,7 +147,7 @@ div#footer {clear:both;text-align:center;}
 </ul>
 
 </div>
-<div id="content"><table background="/Repair/Customer/table13.jpg"   border="0" cellspacing="0">
+<div id="content"><table background="/Repair/Customer/table18.jpg"   border="0" cellspacing="0">
 <tr>
   <td width="900" height="650">
   
@@ -233,7 +233,7 @@ div#footer {clear:both;text-align:center;}
     <div id=Button1>
      <div id=Button3></div>
     
-     
+       <input type="submit" name="action" value="删除"  onclick="alert('不要狠心抛弃我嘛··')" background-color=" #9AD0D8" style="height:40px;width:80px; background:#9AD0D8"/>
        
   </div>
   </div> 

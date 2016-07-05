@@ -1,29 +1,73 @@
-<%@page import="CustomerManage.Customer"%>
-<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
 <html>
 <head>
 <meta content="text/html" charset="utf-8">
 
 
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+function check()
+{
+	var customer_id_check=document.getElementById("customer_id").value;
+	var arg1 = /^[1-9]\d{7}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{3}$/;
+	var arg2 = /^[1-9]\d{5}[1-9]\d{3}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])((\d{4})|\d{3}[A-Z])$/;
+	var customer_send_mac_check=document.getElementById("customer_send_mac").value;
+  var customer_tel_check=document.getElementById("customer_tel").value;
+  var customer_phone_check=document.getElementById("customer_phone").value;
+  var pass_identify=0;
+
+	if(customer_id_check.length==0)
+	{
+		alert("身份编号未填写");
+    pass_identify++;
+	}
+	else if(customer_id_check.match(arg1) == null && customer_id_check.match(arg2) == null)
+	{
+		alert("身份编号不合法");
+    pass_identify++;
+	}
+
+  if(customer_send_mac_check.length!=""&&customer_send_mac_check.match(/^(\d{1,4})(-|\/)(\d{1,2})\2(\d{1,2})$/)==null)
+  {
+		alert("日期不合法");
+    pass_identify++;
+   }
+   
+  if(customer_tel_check.length!=0&&customer_tel_check.match(/^\d{3}-\d{8}|\d{4}-\d{7}$/)==null)
+  {
+    alert("输入电话号码有误");
+    pass_identify++;
+  }
+
+  if(customer_phone_check.length!=0&&customer_phone_check.match(/^\d13\d{9}$/)==null)
+  {
+    alert("输入手机号码有误");
+    pass_identify++;
+  }
+
+  if(pass_identify==0)
+    alert("添加成功");
+}
+//-->
+</SCRIPT>
 
 <style type="text/css">
-    div#container{width:1900px}
-    div#header {}
-    div#top{width:1900px;height:160px}
-    div#top1{width:1900px;height:60px}
-    div#top11{width:900px;height:100px;float:left;}
-    div#top12{width:600px;height:100px;float:left;}
-    div#top13{width:400px;height:100px;float:left;}
+div#container{width:1900px}
+div#header {}
+div#top{width:1900px;height:160px}
+div#top1{width:1900px;height:60px}
+div#top11{width:900px;height:100px;float:left;}
+div#top12{width:600px;height:100px;float:left;}
+div#top13{width:400px;height:100px;float:left;}
 div#menu {height:650px;width:450px;float:left;}
 div#kong1 {height:240px;width:200px;float:left;}
-div#kong2 {background-color:#EEEEEE;height:240px;width:500px;float:left;}
+div#kong2 {background-color:#EEEEEE;height:270px;width:500px;float:left;}
 div#kong3 {height:40px;width:700px;}
 div#Button1 {height:40px;width:550px;float:left;}
 div#Button2 {height:40px;width:150px;float:left;}
@@ -33,9 +77,11 @@ div#footer {clear:both;text-align:center;}
 </style>
 </head>
 
-<body background="/Repair/Customer/beijing.jpg" >
+<body background="beijing.jpg" >
+
+
 <div id=top>
-<table background="/Repair/Customer/top.jpg"   border="0" cellspacing="0">
+<table background="top.jpg"   border="0" cellspacing="0">
 <tr>
   <td width="1900" height="160">
  <div id=top1></div>
@@ -45,7 +91,7 @@ div#footer {clear:both;text-align:center;}
   <div id=top12>
   
   <table   border="0" cellspacing="0">
-<link rel="stylesheet" href="/Repair/Customer/css/style.css" type="text/css" media="screen">
+<link rel="stylesheet" href="css/style.css" type="text/css" media="screen">
 
 <div class="example">
     <ul id="nav">
@@ -133,8 +179,8 @@ div#footer {clear:both;text-align:center;}
 </table>
 </div>
 
+
 <div id="container">
- <form action="deleteServlet" method="post">
 
 <div id="header">
 <h1></h1>
@@ -145,9 +191,12 @@ div#footer {clear:both;text-align:center;}
 <ul>
 
 </ul>
-
 </div>
-<div id="content"><table background="/Repair/Customer/table13.jpg"   border="0" cellspacing="0">
+
+<div id="content">
+
+<form action="../insertCusServlet" method="post">
+<table background="table1.jpg"   border="0" cellspacing="0">
 <tr>
   <td width="900" height="650">
   
@@ -169,88 +218,92 @@ div#footer {clear:both;text-align:center;}
   
   </div>
   <div id=kong2;>
+  <table width="589"" bordercolor="#66CCCC"  border="0">
 
- 
-   <table width="589"" bordercolor="#66CCCC"  border="0">
-<% Customer Display = (Customer)request.getAttribute("findCus_another"); %>
+<br>
+<br>
+<br>
+<br>
+
 <tr>
   <th  bgcolor="#9AD0D8">客户编号:</th>
-  <td><input type="text" name="customer_number" value =<%=Display.getCustomer_number() %>></td>
+  <td><input type="text" name="customer_number" id="customer_number" value="15"></td>
 </tr>
 <tr>
   <th  bgcolor="#9AD0D8">身份编号:</th>
-  <td><input type="text" name="customer_id" value = <%=Display.getCustomer_id() %>></td>
+  <td><input type="text" name="customer_id" id="customer_id" value = "410728199502066512"><span style="color:red">*</span></td>
 </tr>
 
 <tr>
-  <th  bgcolor="#9AD0D8">客户送机时间:</th>
-  <td><input type="text" name="customer_send_mac" value = <%=Display.getCustomer_send_mac() %>></td>
+  <th  bgcolor="#9AD0D8">客户送机时间:(例：2016-11-11)</th>
+  <td><input type="text" name="customer_send_mac" id="customer_send_mac" value = "2016-07-08"></td>
 </tr>
 
 <tr>
-  <th height="68" bgcolor="#9AD0D8">客户性质:</th>
-  <td> <input type="text" name="customer_nature" value = <%=Display.getCustomer_nature() %>>  </td>
+  <th height="48" bgcolor="#9AD0D8">客户性质:</th>
+  <td>  <select name="customer_nature" id="customer_nature" id="customer_nature">   
+        <option value="1">家庭用户</option>   
+        <option value="2">单位用户</option>   
+        <option value="3" selected >代理商</option>   
+         <option value="4">签约用户</option>
+      </select>   </td>
 </tr>
+
 <tr>
   <th  bgcolor="#9AD0D8">单位名称:</th>
-  <td><input type="text" name="customer_unit" value = <%=Display.getCustomer_unit() %>></td>
+  <td><input type="text" name="customer_unit" id="customer_unit" value="一步有限公司"></td>
 </tr>
+
+
+
 <tr>
   <th  bgcolor="#9AD0D8">客户座机:</th>
-  <td><input type="text" name="customer_tel" value = <%=Display.getCustomer_tel() %>></td>
+  <td><input type="text" name="customer_tel" id="customer_tel" value= "0373-8986548"></td>
 </tr>
 
 <tr>
   <th  bgcolor="#9AD0D8">移动电话:</th>
-  <td><input type="text" name="customer_phone" value = <%=Display.getCustomer_phone() %>></td>
+  <td><input type="text" name="customer_phone" id=customer_phone value= "13437195758"> </td>
 </tr>
 
 <tr>
   <th  bgcolor="#9AD0D8">客户地址:</th>
-  <td><input type="text" name="customer_address" value = <%=Display.getCustomer_address() %>></td>
+  <td><input type="text" name="customer_address" id=customer_address value = "华中科技大学韵苑"></td>
 </tr>
 
 <tr>
   <th  bgcolor="#9AD0D8">客户邮编:</th>
-  <td><input type="text" name="customer_postcode" value = <%=Display.getCustomer_id() %>></td>
+  <td><input type="text" name="customer_postcode" id="customer_postcode" value= "453400"></td>
 </tr>
 
 
 <tr>
   <th bgcolor="#9AD0D8">联系人:</th>
-  <td ><input type="text" name="customer_contacts" value = <%=Display.getCustomer_contacts() %>></td>
+  <td ><input type="text" name="customer_contacts" id="customer_contacts" value= "李争"></td>
 </tr>
 <tr>
-  <th bgcolor="#9AD0D8">email:</th>
-  <td ><input type="text" name="customer_email" value = <%=Display.getCustomer_email() %>></td>
+  <th  bgcolor="#9AD0D8">email:</th>
+  <td style="width:350px"><input type="text" name="customer_email" id="customer_email" value="lizheng@gmail.com"></td>
 </tr>
-
   </table>
   </div>
     <div id=kong3>
   </div>
-   <div>
+  <div>
     <div id=Button1>
      <div id=Button3></div>
-    
-     
-       
+       <input type="submit" name="Submit" value="修改"  onclick="alert('您修改成功哦··')" onclick=check('') background-color=" #9AD0D8" style="height:40px;width:80px; background:#9AD0D8"/>
   </div>
-  </div> 
-  <div id=Button2></div>
+  </div>
+  
   </table>
-</div>
-  </form>
- 
-<div id="footer"></div>
-<table background="/Repair/Customer/123.jpg" border="0">
-<tr>
-<td width="500" height="200">
 
-</td>
-</tr>
-</table>
-</div>
+</form>
+  
+<div id="footer"></div>
+
+
 </body>
 </html>
+
 
