@@ -188,7 +188,8 @@ div#footer {clear:both;text-align:center;}
 </div>
 <div id="content">
 
-
+<form action="../addToRepairServlet?service=add" target="_self"
+			name="userForm" method="post">
 <table background="table3.jpg"   border="0" cellspacing="0">
 <tr>
   <td width="900" height="650">
@@ -215,8 +216,7 @@ div#footer {clear:both;text-align:center;}
 
 
   <div class="mes" id=kong2;>
-<form action="../addToRepairServlet?service=add" target="_self"
-			name="userForm" method="post">
+
   <table id="mytable" width="589" bordercolor="#66CCCC"  border="0">
   <br>
   <br>
@@ -349,7 +349,7 @@ div#footer {clear:both;text-align:center;}
     
 </tr>
 
-<td><input type="button" name="Submit" value="确认" onclick=check() background-color=" #9AD0D8" style="height:40px;width:80px; background:#9AD0D8"/>
+<td><input type="submit" name="Submit" value="确认" onclick=check() background-color=" #9AD0D8" style="height:40px;width:80px; background:#9AD0D8"/>
     </td>
 </table>
 </form>

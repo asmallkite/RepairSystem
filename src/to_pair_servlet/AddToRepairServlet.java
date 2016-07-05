@@ -1,7 +1,9 @@
 package to_pair_servlet;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -26,7 +28,8 @@ public class AddToRepairServlet extends HttpServlet {
 		if(service == null || service.equals("")){
 			System.out.println((new java.util.Date()).toLocaleString() + ":请求列出用户列表！");
 		}else if(service.equals("add")){
-			To_Repair_Fun_Manage to_Repair_Fun_Manage = To_Repair_Fun_Manage.getInstance();
+			
+		
 			String to_repair_number = request.getParameter("to_repair_number");
 			String  customer_number = request.getParameter("customer_number");
 			String to_repair_product_type = request.getParameter("to_repair_product_type");
@@ -58,6 +61,12 @@ public class AddToRepairServlet extends HttpServlet {
 					 to_repair_battery,  to_repair_cd_driver,
 					 to_repair_floppy,  to_repair_time,
 					 to_repair_price,  to_repair_state);
+			
+			To_Repair_Fun_Manage to_Repair_Fun_Manage = To_Repair_Fun_Manage.getInstance();
+			to_Repair_Fun_Manage.insertToRepair(a_to_repair_sta);
+			RequestDispatcher dispatcher = request.getRequestDispatcher("Customer/Test.jsp");
+			
+			dispatcher.forward(request, response);
 		}
 		
 	}
