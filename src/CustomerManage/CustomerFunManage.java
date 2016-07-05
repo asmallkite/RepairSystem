@@ -98,7 +98,22 @@ public class CustomerFunManage {
 	
 	
 	
-	 public void updateCusByNo(Customer customer) {
-	     this.insertCus(customer);
+	 public void updateCusByNo(int customer_number) {
+		 Connection connection = null;
+			try{
+				connection = DbUtils.getConnection();
+				CustomFunImpl customFunImpl = new CustomFunImpl(connection);
+				DbUtils.beginTransaction(connection);
+				customFunImpl.updateCusByNo(customer_number);
+				DbUtils.commit(connection);
+		} catch (ServiceException e) {
+			throw e;
+		} catch (Exception e) {
+			DbUtils.rollback(connection);
+			throw new ServiceException("修改用户错误", e);
+			//e.printStackTrace();
+		} finally {
+			DbUtils.closeConnection(connection);
+		}
 	    }
 }

@@ -232,7 +232,8 @@ div#footer {clear:both;text-align:center;}
    <div>
     <div id=Button1>
      <div id=Button3></div>
-       <input type="submit" name="Submit" value="删除" background-color=" #9AD0D8" style="height:40px;width:80px; background:#9AD0D8"/>
+       <input type="submit" name="action" value="删除" background-color=" #9AD0D8" style="height:40px;width:80px; background:#9AD0D8"/>
+       <input type="submit" name="action" value="修改" background-color=" #9AD0D8" style="height:40px;width:80px; background:#9AD0D8"/>
   </div>
   </div> 
   <div id=Button2></div>

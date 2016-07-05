@@ -17,7 +17,7 @@
     <servlet-name>FindCusServlet</servlet-name>
     <url-pattern>/findCusServlet</url-pattern>
   </servlet-mapping>
-   <servlet>
+  <servlet>
     <servlet-name>DeleteServlet</servlet-name>
     <servlet-class>servlet.DeleteServlet</servlet-class>
   </servlet>
