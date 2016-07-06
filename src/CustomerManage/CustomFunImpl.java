@@ -97,7 +97,7 @@ public class CustomFunImpl implements CustomFun {
 	            DbUtils.closeConnection(connection);
 	        }
 	    }
-//此功能为测试
+
 	    @Override
 	    public void updateCusByNo(int customer_number) {
 	    	Customer customer01 = null;
