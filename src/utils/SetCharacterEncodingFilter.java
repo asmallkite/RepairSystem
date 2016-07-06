@@ -28,9 +28,9 @@ public class SetCharacterEncodingFilter implements Filter {
 	public void doFilter(ServletRequest request, ServletResponse response,
 			FilterChain chain) throws IOException, ServletException {
              
-		request.setCharacterEncoding("GBK");
+		request.setCharacterEncoding("utf-8");
 
-		// ���ݿ��Ƶ���һ��������
+		
 		chain.doFilter(request, response);
 	}
 
