@@ -1,6 +1,5 @@
-<%@page import="repair.Repair"%>
-<%@page import="to_repair.To_repair_stament"%>
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%@page import="repair.Repair"%>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -17,9 +16,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   {
     if (value==null||value=="")
     {
-      alert(alerttxt);return false
+      alert(alerttxt);
+      return false;
     }
-  else {return true}
+  else {return true;}
     }
 }
 
@@ -28,11 +28,18 @@ function validate_form(thisform)
 with (thisform)
   {
   if (validate_required(repair_number,"维修编号未填写!")==false)
-    {repair_number.focus();return false}
+    {repair_number.focus();
+      return false;
+    }
   }
 }
-</script>
 
+function del()
+{
+  alert("删除成功");
+}
+
+</script>
 <style type="text/css">
     div#container{width:1900px}
     div#header {}
@@ -53,10 +60,10 @@ div#footer {clear:both;text-align:center;}
 </style>
 </head>
 
-<body background="/Repair/ToRepair/beijing.jpg" >
+<body background="/Repair/Repair/beijing.jpg" >
 
 <div id=top>
-<table background="/Repair/ToRepair/top.jpg"   border="0" cellspacing="0">
+<table background="/Repair/Repair/top.jpg"   border="0" cellspacing="0">
 <tr>
   <td width="1900" height="160">
  <div id=top1></div>
@@ -66,7 +73,7 @@ div#footer {clear:both;text-align:center;}
   <div id=top12>
   
   <table   border="0" cellspacing="0">
-<link rel="stylesheet" href="/Repair/ToRepair/css/style.css" type="text/css" media="screen">
+<link rel="stylesheet" href="/Repair/Repair/css/style.css" type="text/css" media="screen">
 
 <div class="example">
     <ul id="nav">
@@ -155,7 +162,7 @@ div#footer {clear:both;text-align:center;}
 </div>
 
 <div id="container">
-<form action="../repairServlet?service=find2" target="_self"
+<form action="repairServlet?service=delete2" target="_self"
 			name="userForm" method="post">
 <div id="header">
 <h1></h1>
@@ -168,7 +175,7 @@ div#footer {clear:both;text-align:center;}
 </ul>
 
 </div>
-<div id="content"><table background="/Repair/Repair/table14.jpg"   border="0" cellspacing="0">
+<div id="content"><table background="/Repair/Repair/table17.jpg"   border="0" cellspacing="0">
 <tr>
   <td width="900" height="650">
   
@@ -190,7 +197,7 @@ div#footer {clear:both;text-align:center;}
   
   </div>
   <div id=kong2;>
-  
+<br><br><br><br><br>
   <% Repair repairruturn = (Repair)request.getAttribute("to_and_to");%>
 
 
@@ -242,7 +249,7 @@ div#footer {clear:both;text-align:center;}
     <div id=Button1>
      
 <div id=Button3></div>
-      
+       <input type="submit" name="Submit" value="删除" onclick=del() background-color=" #9AD0D8" style="height:40px;width:80px; background:#9AD0D8"/>
      
   </div>
     
@@ -253,7 +260,7 @@ div#footer {clear:both;text-align:center;}
  </form>
 </div>
 <div id="footer"></div>
-<table background="/Repair/ToRepair/123.jpg" border="0">
+<table background="/Repair/Repair/123.jpg" border="0">
 <tr>
 <td width="500" height="200">
 

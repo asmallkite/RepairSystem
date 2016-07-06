@@ -68,19 +68,23 @@ RequestDispatcher dispatcher = request.getRequestDispatcher("Customer/Test.jsp")
 			
 			dispatcher.forward(request, response);
 		}else if(service.equals("delete")){
-			String get_number = request.getParameter("repair_number");
-			System.out.println("传进servlet了~~~~~~~~~~~~~~~~~~~~~~~~~~");
-			To_Repair_Fun_Manage to_Repair_Fun_Manage = To_Repair_Fun_Manage.getInstance();
-			To_repair_stament a_re_sta = to_Repair_Fun_Manage.getToRepairByNo(get_number);
+			int get_number = Integer.parseInt(request.getParameter("repair_number"));
+		
+			RepairFunManage manage = RepairFunManage.getInstance();
+			Repair a_re_sta = new Repair();
+			a_re_sta = manage.getRepByNo(get_number);
 			request.setAttribute("to_and_to", a_re_sta);
-			RequestDispatcher dispatcher = request.getRequestDispatcher("ToRepair/DeleToRepair2.jsp");
+			RequestDispatcher dispatcher = request.getRequestDispatcher("Repair/DeleteRepair2.jsp");
 			dispatcher.forward(request, response);
 			
 		}else if(service.equals("delete2")){
-			System.out.println("update2222222222222222222222");
-			String get_number = request.getParameter("repair_number");
-			To_Repair_Fun_Manage to_Repair_Fun_Manage = To_Repair_Fun_Manage.getInstance();
-			to_Repair_Fun_Manage.deleteToRepairByNo(get_number);
+			int get_number = Integer.parseInt(request.getParameter("repair_number2"));
+			
+			RepairFunManage manage = RepairFunManage.getInstance();
+			manage.deleteRepByNo(get_number);
+RequestDispatcher dispatcher = request.getRequestDispatcher("Customer/Test.jsp");
+			
+			dispatcher.forward(request, response);
 			
 		}else if(service.equals("update")){
 			String get_number = request.getParameter("repair_number");
