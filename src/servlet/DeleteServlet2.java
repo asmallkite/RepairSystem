@@ -2,6 +2,7 @@ package servlet;
 
 import java.io.IOException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -36,6 +37,9 @@ public class DeleteServlet2 extends HttpServlet {
 		CustomerFunManage customTest = CustomerFunManage.getInstance();
 		int customer_number = Integer.parseInt(request.getParameter("customer_number"));
 		customTest.deleteCusByNo(customer_number);
+		RequestDispatcher dispatcher = request.getRequestDispatcher("Customer/Test.jsp");
+		
+		dispatcher.forward(request, response);
 		
 	}
 

@@ -41,13 +41,13 @@ function check()
    
   if(customer_tel_check.length!=0&&customer_tel_check.match(/^\d{3}-\d{8}|\d{4}-\d{7}$/)==null)
   {
-    alert("输入电话号码有误");
+    //alert("输入电话号码有误");
     pass_identify++;
   }
 
   if(customer_phone_check.length!=0&&customer_phone_check.match(/^\d13\d{9}$/)==null)
   {
-    alert("输入手机号码有误");
+   // alert("输入手机号码有误");
     pass_identify++;
   }
 
@@ -195,7 +195,7 @@ div#footer {clear:both;text-align:center;}
 
 <div id="content">
 
-<form action="../addToRepairServlet" method="post">
+<form action="../insertCusServlet" method="post">
 <input type="hidden" name="Action" value="Insert_pager">
 <table background="table1.jpg"   border="0" cellspacing="0">
 <tr>

@@ -2,6 +2,7 @@ package servlet;
 
 import java.io.IOException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -34,6 +35,8 @@ public class UpdateServlet extends HttpServlet {
 		response.setCharacterEncoding("utf-8");
 		customer_number = Integer.parseInt(request.getParameter("customer_number"));
 		FunMa.updateCusByNo(customer_number);
+		RequestDispatcher dispatcher = request.getRequestDispatcher("Customer/Test.jsp");			
+		dispatcher.forward(request, response);
 	}
 
 }

@@ -4,6 +4,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.sql.Date;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -93,6 +94,8 @@ public class InsertCusServlet extends HttpServlet {
 			CustomerFunManage customTest =null;
 			customTest = CustomerFunManage.getInstance();
 			customTest.insertCus(customer);
+			RequestDispatcher dispatcher = request.getRequestDispatcher("Customer/Test.jsp");			
+			dispatcher.forward(request, response);
 			
 //			
 //			PrintWriter out = response.getWriter();

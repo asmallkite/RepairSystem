@@ -137,7 +137,7 @@ div#footer {clear:both;text-align:center;}
 </div>
 
 <div id="container">
- <form action="UpdateServlet" method="post">
+ <form action="updateServlet" method="post">
 
 <div id="header">
 <h1></h1>

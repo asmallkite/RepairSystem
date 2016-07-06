@@ -161,6 +161,7 @@ div#footer {clear:both;text-align:center;}
 <div id="content">
 
 <form action="../findCusServlet" method="post">
+<div id="content">
 <table background="table13.jpg"   border="0" cellspacing="0">
 <tr>
   <td width="900" height="650">
