@@ -56,9 +56,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     </style>
 </head>
 
-<body background="beijing.jpg" >
+<body background="/Repair/ToRepair/beijing.jpg" >
 <div id=top>
-<table background="top.jpg"   border="0" cellspacing="0">
+<table background="/Repair/ToRepair/top.jpg"   border="0" cellspacing="0">
 <tr>
   <td width="1900" height="160">
  <div id=top1></div>
@@ -68,7 +68,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <div id=top12>
   
   <table   border="0" cellspacing="0">
-<link rel="stylesheet" href="css/style.css" type="text/css" media="screen">
+<link rel="stylesheet" href="/Repair/ToRepair/css/style.css" type="text/css" media="screen">
 
 <div class="example">
     <ul id="nav">
@@ -157,9 +157,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 </div>
 
 <div id="container" >
+<form action="addToRepairServlet?service=delete2" target="_self"
+			name="userForm" method="post">
 
-
-    <div id="header" background="beijing.jpg" >
+    <div id="header" background="/Repair/ToRepair/beijing.jpg" >
         <h1></h1>
     </div>
     <div id="menu">
@@ -169,7 +170,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         </ul>
 
     </div>
-    <div id="content"><table background="table15.jpg"   border="0" cellspacing="0">
+    <div id="content"><table background="/Repair/ToRepair/table15.jpg"   border="0" cellspacing="0">
         <tr>
             <td width="900" height="650">
 
@@ -192,27 +193,20 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                     </div>
                     <div id=kong2;>
 
-    <form action="submitpage.htm" onsubmit="return validate_form(this)" method="post">
-    <br>
-    <br>
-    <br>
-    <p><font size="4" face="Verdana" color="#66CCCC" >
-      <B>请输入备件名称:</B>
-    </font>   
-    <input type="text" name="spare_name">
-    <input type="submit" name="Submit" value="查询" background-color=" #9AD0D8" style="height:40px;width:80px; background:#9AD0D8"> 
-    </p>
-    </form>
+   
     
     <table width="589" bordercolor="#66CCCC"  border="0">
-
+<br/>
+<br/>
+<br/><br/><br/>
+  <% To_repair_stament return_to_sta = (To_repair_stament)request.getAttribute("to_and_to");%>
         <tr>
   <th  bgcolor="#9AD0D8">维修编号:</th>
-  <td><input type="text" name="repair_number"></td>
+  <td><input type="text" name="repair_number"  value=<%=return_to_sta.getTo_repair_number() %>></td>
 </tr>
 <tr>
   <th  bgcolor="#9AD0D8">客户编号:</th>
-  <td><input type="text" name="customer_number"></td>
+  <td><input type="text" name="customer_number" value=<%=return_to_sta.getCustomer_number() %>></td>
 </tr>
 
 <tr>
@@ -227,20 +221,20 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 </tr>
 <tr>
   <th  bgcolor="#9AD0D8">机器品牌:</th>
-  <td><input type="text" name="to_repair_mac_brand"></td>
+  <td><input type="text" name="to_repair_mac_brand" value=<%=return_to_sta.getTo_repair_mac_type() %>></td>
 </tr>
 <tr>
   <th bgcolor="#9AD0D8">机器型号:</th>
-  <td ><input type="text" name="to_repair_mac_type"></td>
+  <td ><input type="text" name="to_repair_mac_type" value=<%=return_to_sta.getTo_repair_mac_brand()%>></td>
 </tr>
 <tr>
   <th  bgcolor="#9AD0D8">系列号：</th>
-  <td style="width:350px"><input type="text" name="to_repair_serial"></td>
+  <td style="width:350px"><input type="text" name="to_repair_serial" value=<%=return_to_sta.getTo_repair_serial() %>></td>
 </tr>
 
 <tr>
   <th  bgcolor="#9AD0D8">缺少零件：</th>
-  <td style="width:350px"><input type="text" name="to_repair_lack_part"></td>
+  <td style="width:350px"><input type="text" name="to_repair_lack_part" value=<%=return_to_sta.getTo_repair_lack_part() %>></td>
 </tr>
 <tr>
   <th height="91" bgcolor="#9AD0D8"><p>机器故障</p>
@@ -264,35 +258,35 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 <tr>
   <th  bgcolor="#9AD0D8">机器外观检查</th>
-  <td style="width:350px"><input type="text" name="to_repair_facial_check"></td>
+  <td style="width:350px"><input type="text" name="to_repair_facial_check" value=<%=return_to_sta.getTo_repair_facial_check()%>></td>
 </tr>
 <tr>
   <th  bgcolor="#9AD0D8">开机口令：</th>
-  <td style="width:350px"><input type="text" name="to_repair_start_cmd"></td>
+  <td style="width:350px"><input type="text" name="to_repair_start_cmd" value=<%=return_to_sta.getTo_repair_start_cmd() %>></td>
 </tr>
 <tr>
   <th  bgcolor="#9AD0D8">重要资料：</th>
-  <td style="width:350px"><input type="text" name="to_repair_impo_files"></td>
+  <td style="width:350px"><input type="text" name="to_repair_impo_files" value=<%=return_to_sta.getTo_repair_impo_files() %>></td>
 </tr>
 
 <tr>
   <th  bgcolor="#9AD0D8">HDD：</th>
-  <td style="width:350px"><input type="text" name="to_repair_hdd"></td>
+  <td style="width:350px"><input type="text" name="to_repair_hdd" value=<%=return_to_sta.getTo_repair_hdd() %>></td>
 </tr>
 
 <tr>
   <th  bgcolor="#9AD0D8">外置PC卡：</th>
-  <td style="width:350px"><input type="text" name="to_repair_pc"></td>
+  <td style="width:350px"><input type="text" name="to_repair_pc" value=<%=return_to_sta.getTo_repair_pc() %>></td>
 </tr>
 
 <tr>
   <th  bgcolor="#9AD0D8">AC适配器：</th>
-  <td style="width:350px"><input type="text" name="to_repair_ac"></td>
+  <td style="width:350px"><input type="text" name="to_repair_ac" value=<%=return_to_sta.getTo_repair_ac() %>></td>
 </tr>
 
 <tr>
   <th  bgcolor="#9AD0D8">器件电池：</th>
-  <td style="width:350px"><input type="text" name="to_repair_battery"></td>
+  <td style="width:350px"><input type="text" name="to_repair_battery" value=<%=return_to_sta.getTo_repair_battery() %>></td>
 </tr>
 
 <tr>
@@ -323,7 +317,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 
 
-        <table background="beijing.jpg" border="1">
+        <table background="/Repair/ToRepair/beijing.jpg" border="1">
         </table>
 
     </div>
@@ -343,6 +337,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         </div>
 
         </table>
+        </form>
     </div>
     <div id="footer">
 

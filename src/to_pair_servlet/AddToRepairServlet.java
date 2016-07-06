@@ -85,10 +85,11 @@ RequestDispatcher dispatcher = request.getRequestDispatcher("Customer/Test.jsp")
 			To_Repair_Fun_Manage to_Repair_Fun_Manage = To_Repair_Fun_Manage.getInstance();
 			To_repair_stament a_re_sta = to_Repair_Fun_Manage.getToRepairByNo(get_number);
 			request.setAttribute("to_and_to", a_re_sta);
-			RequestDispatcher dispatcher = request.getRequestDispatcher("ToRepair/FindToRepair2.jsp");
+			RequestDispatcher dispatcher = request.getRequestDispatcher("ToRepair/DeleToRepair2.jsp");
 			dispatcher.forward(request, response);
 			
 		}else if(service.equals("delete2")){
+			System.out.println("update2222222222222222222222");
 			String get_number = request.getParameter("repair_number");
 			To_Repair_Fun_Manage to_Repair_Fun_Manage = To_Repair_Fun_Manage.getInstance();
 			to_Repair_Fun_Manage.deleteToRepairByNo(get_number);
@@ -102,10 +103,12 @@ RequestDispatcher dispatcher = request.getRequestDispatcher("Customer/Test.jsp")
 			RequestDispatcher dispatcher = request.getRequestDispatcher("ToRepair/UpdateToRepair2.jsp");
 			dispatcher.forward(request, response);
 		}else if(service.equals("update2")){
-			String get_number = request.getParameter("repair_number");
-			To_Repair_Fun_Manage to_Repair_Fun_Manage = To_Repair_Fun_Manage.getInstance();
-			to_Repair_Fun_Manage.updateCusByNo(get_number);
-			
+			System.out.println("update2222222222222222222222");
+//			String get_number = request.getParameter("repair_number");
+//			To_Repair_Fun_Manage to_Repair_Fun_Manage = To_Repair_Fun_Manage.getInstance();
+//			to_Repair_Fun_Manage.updateCusByNo(get_number);
+//			RequestDispatcher dispatcher = request.getRequestDispatcher("Customer/Test.jsp");
+//			dispatcher.forward(request, response);
 		}
 		
 	}

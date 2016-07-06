@@ -165,7 +165,7 @@ with (thisform)
         </ul>
 
     </div>
-    <div id="content"><table background="table12.jpg"   border="0" cellspacing="0">
+    <div id="content"><table background="table18.jpg"   border="0" cellspacing="0">
         <tr>
             <td width="900" height="650">
 

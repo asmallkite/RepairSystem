@@ -152,7 +152,7 @@ with (thisform)
 
 
 <div id="container" >
-<form action="../addToRepairServlet?service=update2" target="_self"
+<form action="addToRepairServlet?service=update2" target="_self"
 			name="userForm" method="post">
 
 
@@ -166,7 +166,7 @@ with (thisform)
         </ul>
 
     </div>
-    <div id="content"><table background="/Repair/ToRepair/table12.jpg"   border="0" cellspacing="0">
+    <div id="content"><table background="/Repair/ToRepair/table18.jpg"   border="0" cellspacing="0">
         <tr>
             <td width="900" height="650">
 
@@ -321,7 +321,7 @@ with (thisform)
 
 
          <div id=Button2>
-            <input type="submit" name="Submit" value="修改" onclick=pass() background-color=" #9AD0D8" style="height:40px;width:80px; background:#9AD0D8"/>
+            <input type="submit" name="Submit" value="修改"  background-color=" #9AD0D8" style="height:40px;width:80px; background:#9AD0D8"/>
 
         </div>
 
