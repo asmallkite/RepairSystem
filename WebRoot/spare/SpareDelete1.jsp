@@ -34,11 +34,9 @@ div#footer {clear:both;text-align:center;}
 </style>
 </head>
 
-<body background="/Repair/spare/beijing.jpg" >
-
-
+<body background="/Repair/account/beijing.jpg" >
 <div id=top>
-<table background="/Repair/spare/top.jpg"   border="0" cellspacing="0">
+<table background="/Repair/account/top.jpg"   border="0" cellspacing="0">
 <tr>
   <td width="1900" height="160">
  <div id=top1></div>
@@ -48,78 +46,81 @@ div#footer {clear:both;text-align:center;}
   <div id=top12>
   
   <table   border="0" cellspacing="0">
-<link rel="stylesheet" href="/Repair/spare/css/style.css" type="text/css" media="screen">
+<link rel="stylesheet" href="/Repair/account/css/style.css" type="text/css" media="screen">
 
 <div class="example">
     <ul id="nav">
-        <li class="current"><a href="Introduction.html">简介</a></li>
+        <li class="current"><a href="/Repair/account/Introduction.html">简介</a></li>
 		
-		        <li><a href="AddUser.html">客户管理</a>
+		        <li><a href="/Repair/Customer/AddUser.jsp">客户管理</a>
                     <ul>
-                        <li><a href="DefendUser.html">查询客户信息</a></li>
-                        <li><a href="AddUser.html">新增客户信息</a></li>
-                        <li><a href="DefendUser.html">修改客户信息</a></li>
-                        <li><a href="DefendUser.html">删除客户信息</a></li>
+                        <li><a href="/Repair/Customer/FindCus.jsp">查询客户信息</a></li>
+                        <li><a href="/Repair/Customer/AddUser.jsp">新增客户信息</a></li>
+                        <li><a href="/Repair/Customer/update.jsp">修改客户信息</a></li>
+                        <li><a href="/Repair/Customer/DeleCus.jsp">删除客户信息</a></li>
                     </ul>
                 </li>
        
 	   
 	   
 	   
-        <li><a href="http://www.script-tutorials.com/category/resources/">报修管理</a>
+        <li><a href="/Repair/ToRepair/FindToRepair.jsp">报修管理</a>
             <ul>
-                <li><a href="http://www.script-tutorials.com/category/resources/">维护保修任务</a>
+                <li><a href="/Repair/ToRepair/UpdateToRepair.jsp">维护保修任务</a>
                     <ul>
-                        <li><a href="AddRepair.html">新增报修信息</a></li>
-                        <li><a href="DefendRepairIn.html">修改报修任务</a></li>
-                        <li><a href="DefendRepairIn.html">查询报修任务</a></li>
-                        <li><a href="DefendRepairIn.html">删除报修任务</a></li>
-                    </ul>
+ <li><a href="/Repair/ToRepair/AddToRepair.jsp">新增报修信息</a></li>
+                        <li><a href="/Repair/ToRepair/UpdateToRepair.jsp">修改报修任务</a></li>
+                        <li><a href="/Repair/ToRepair/FindToRepair.jsp">查询报修任务</a></li>
+                        <li><a href="/Repair/ToRepair/DeleToRepair.jsp">删除报修任务</a></li>
+                                        </ul>
                 </li>
-				<li><a href="http://www.script-tutorials.com/tag/captcha/">打印客户确认单</a></li>
-				<li><a href="http://www.script-tutorials.com/tag/captcha/">提交客户确认单</a></li>
+				<li><a href="/Repair/Customer/FindCus.jsp">打印客户确认单</a></li>
+				<li><a href="/Repair/Customer/FindCus.jsp">提交客户确认单</a></li>
                
             </ul>
         </li>
-		 <li><a href="http://www.script-tutorials.com/">维修管理</a>
+		 <li><a href="/Repair/Repair/AddRepair.jsp">维修管理</a>
             <ul>
-                <li><a href="DistributRepair.html">分配维修任务</a></li>
-				   <li><a href="DefendRepair.html">查询维修任务</a></li>
-                <li><a href="DefendRepair.html">维护维修任务</a>
+                <li><a href="/Repair/Repair/AddRepair.jsp">分配维修任务</a></li>
+				   <li><a href="/Repair/Repair/FindRepair.jsp">查询维修任务</a></li>
+                <li><a href="/Repair/Repair/UpdateRepair.jsp">维护维修任务</a>
                     <ul>
-                        <li><a href="DefendRepair.html">修改维修任务</a></li>
-                        <li><a href="DefendRepair.html">删除维修任务</a></li>
+                        <li><a href="/Repair/Repair/UpdateRepair.jsp">修改维修任务</a></li>
+                        <li><a href="/Repair/Repair/DeleteRepair.jsp">删除维修任务</a></li>
                     </ul>
                 </li>
             </ul>
         </li>
        
-        <li><a href="http://www.script-tutorials.com/creating-css3-dropdown-menu/">结算管理</a>
+        <li><a href="/Repair/account/RegisterAccount.jsp">结算管理</a>
 		
 		             <ul>
-                        <li><a href="RegisterAccount.html">登记结算信息</a></li>
-                        <li><a href="AccountInquire.html">查询结算信息</a></li>
+                        <li><a href="/Repair/account/RegisterAccount.jsp">登记结算信息</a></li>
+                        <li><a href="/Repair/account/AccountInquire.jsp">查询结算信息</a></li>
                      </ul>
 		
 		</li>
-           <li><a href="http://www.script-tutorials.com/creating-css3-dropdown-menu/">备件管理</a>
+           <li><a href="/Repair/spare/SpareInquire.jsp">备件管理</a>
 		   
 		             <ul>
-                        <li><a href="SpareInquire.html">出库</a></li>
-                        <li><a href="SpareIn.html">入库</a></li>
-						 <li><a href="SpareInquire.html">查询库存</a></li>
-						 <li><a href="StockState.html">查询库存状态</a></li>
+                        <li><a href="/Repair/spare/SpareDelete.jsp">出库</a></li>
+                        <li><a href="/Repair/spare/SpareIn.jsp">入库</a></li>
+						 <li><a href="/Repair/spare/SpareInquire.jsp">查询库存</a></li>
+
                      </ul>
 		   
 		   
 		   </li>
-              <li><a href="http://www.script-tutorials.com/creating-css3-dropdown-menu/">运营监督管理</a>
+              <li><a >运营监督管理</a>
 			  
 			   <ul>
-                        <li><a href="SpareInquire.html">出库</a></li>
-                        <li><a href="SpareIn.html">入库</a></li>
-						 <li><a href="SpareInquire.html">查询库存</a></li>
-						 <li><a href="StockState.html">查询库存状态</a></li>
+			   
+                       	<li><a href="/Repair/Customer/FindCus.jsp">查询客户信息</a></li>
+                       	<li><a href="/Repair/ToRepair/FindToRepair.jsp">查询报修任务</a></li>
+                       	 <li><a href="/Repair/Repair/FindRepair.jsp">查询维修任务</a></li>
+                       	 <li><a href="/Repair/account/AccountInquire.jsp">查询结算信息</a></li>
+						 <li><a href="/Repair/spare/SpareInquire.jsp">查询库存</a></li>
+						
                      </ul>
 			  
 			  
@@ -135,11 +136,6 @@ div#footer {clear:both;text-align:center;}
 </tr>
 </table>
 </div>
-
-
-
-
-
 <div id="container">
 
 <form action="handleSpaServlet?service=delete2" target="_self"
