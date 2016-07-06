@@ -47,7 +47,7 @@ public class HandleAcountServlet extends HttpServlet {
 			RequestDispatcher dispatcher = request.getRequestDispatcher("Customer/Test.jsp");			
 			dispatcher.forward(request, response);
 		}
-		else if(service.equals("inquiry")){
+		else if(service.equals("find")){
 			
 		
 			
@@ -59,17 +59,12 @@ public class HandleAcountServlet extends HttpServlet {
 			Count findCou = null;
 			findCou = countTest.getCouByNo(se_repair_number);
 			request.setAttribute("findCou_another", findCou);
-			RequestDispatcher dispatcher = request.getRequestDispatcher("/Count/AccountInquire1.jsp");
+			RequestDispatcher dispatcher = request.getRequestDispatcher("account/AccountInquire1.jsp");
 			dispatcher.forward(request, response);		
 		
 		}
 		
-		else if(service.equals("delete")){	
-			CountFunManage customTest = CountFunManage.getInstance();
-			int customer_number = Integer.parseInt(request.getParameter("se_repair_number"));
-			customTest.deleteCouByNo(customer_number);		
 		
-		}
 	}
 	
 	
