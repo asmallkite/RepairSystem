@@ -1,4 +1,5 @@
-<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%@ page language="java" import="java.util.*" %>
+<%@page pageEncoding="UTF-8" contentType="text/html; charset=UTF-8" %> 
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -148,7 +149,10 @@ div#footer {clear:both;text-align:center;}
 </tr>
 </table>
 </div>
-<div id="content"><table background="table5.jpg"   border="0" cellspacing="0">
+<div id="content">
+<form action="../repairServlet?service=add" target="_self"
+			name="userForm" method="post">
+<table background="table5.jpg"   border="0" cellspacing="0">
 <tr>
   <td width="900" height="650">
   

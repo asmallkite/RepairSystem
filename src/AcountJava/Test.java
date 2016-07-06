@@ -25,7 +25,7 @@ public class Test {
 //			test.updateCouByNo(6);
 			//测试删除
 			CountFunManage test = CountFunManage.getInstance();
-			test.deleteCouByNo(0);
+			test.deleteCouByNo(12);
 			
 	
 	}

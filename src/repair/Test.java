@@ -19,8 +19,8 @@ public class Test {
 //	System.out.println("user info:\n" );
 //		
 	//测试删除
-//		RepairFunManage test_Manage = RepairFunManage.getInstance();
-//		test_Manage.deleteRepByNo(1);
+		RepairFunManage test_Manage = RepairFunManage.getInstance();
+		test_Manage.deleteRepByNo(12);
 		//测试修改
 //		RepairFunManage test_Manage = RepairFunManage.getInstance();
 //		test_Manage.updateCouByNo(1);
