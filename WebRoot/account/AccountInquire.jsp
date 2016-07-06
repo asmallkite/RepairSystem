@@ -51,10 +51,10 @@ function validate_form(thisform)
     </style>
 </head>
 
-<body background="beijing.jpg" >
+<body background="/Repair/account/beijing.jpg" >
 <div id=top>
 
-<table background="top.jpg"   border="0" cellspacing="0">
+<table background="/Repair/account/top.jpg"   border="0" cellspacing="0">
 <tr>
   <td width="1900" height="160">
  <div id=top1></div>
@@ -64,7 +64,7 @@ function validate_form(thisform)
   <div id=top12>
   
   <table   border="0" cellspacing="0">
-<link rel="stylesheet" href="css/style.css" type="text/css" media="screen">
+<link rel="stylesheet" href="/Repair/account/css/style.css" type="text/css" media="screen">
 
 <div class="example">
     <ul id="nav">
@@ -168,7 +168,7 @@ function validate_form(thisform)
         </ul>
 
     </div>
-    <div id="content"><table background="table8.jpg"   border="0" cellspacing="0">
+    <div id="content"><table background="/Repair/account/table8.jpg"   border="0" cellspacing="0">
         <tr>
             <td width="900" height="650">
 
@@ -236,7 +236,7 @@ function validate_form(thisform)
             </table>
         </div>
         <div id="footer"></div>
-        <table background="123.jpg" border="0">
+        <table background="/Repair/account/123.jpg" border="0">
             <tr>
                 <td width="500" height="200">
 

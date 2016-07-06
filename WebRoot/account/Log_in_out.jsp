@@ -1,3 +1,9 @@
+<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%
+String path = request.getContextPath();
+String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
+
 <!doctype html>
 <html>
 <head>
@@ -15,29 +21,31 @@
 	<!-- /css files -->
 </head>
 <body>
-<h1>登陆和注册</h1>
+<h1>sign-in &&  register</h1>
 <div class="log">
 	<div class="content1">
-		<h2>登录</h2>
-		<form action="Introduction.html" method="post">
-			<input type="text" name="userid" value="请输入用户名" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'USERNAME';}">
+		<h2>sign-in</h2>
+		<form action="../logServlet?service=login" target="_self"
+			name="userForm" method="post">
+			<input type="text" name="userid" value="please input your userid" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'USERNAME';}">
 			<input type="password" name="psw" value="PASSWORD" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'PASSWORD';}">
 			<div class="button-row">
             
-				<input type="submit" class="sign-in" value="登录">
+				<input type="submit" class="sign-in" value="sign-in">
              
-				<input type="reset" class="reset" value="重置">
+				<input type="reset" class="reset" value="reset">
 				<div class="clear"></div>
 			</div>
 		</form>
 	</div>
 	<div class="content2">
-		<h2>注册</h2>
-		<form action="/evaluation" method="post" onsubmit="return check();">
-			<input type="text" name="userid" value="请输入用户名" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'NAME AND SURNAME';}">
+		<h2>register</h2>
+		<form action="../logServlet?service=add" target="_self"
+			name="userForm" method="post" >
+			<input type="text" name="userid" value="please input userid" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'NAME AND SURNAME';}">
 			<input type="password" name="psw" value="PASSWORD" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'PASSWORD';}">
-			<input type="submit" class="register" value="注册">
-		</form>
+			<input type="submit" class="register" value="register">
+		</form>s
 	</div>
        <script>
    function check(){

@@ -57,11 +57,7 @@
     <servlet-name>AddToRepairServlet</servlet-name>
     <url-pattern>/addToRepairServlet</url-pattern>
   </servlet-mapping>
-  
-  
-  
-  
-    <servlet>
+  <servlet>
     <servlet-name>RepairServlet</servlet-name>
     <servlet-class>repair.RepairServlet</servlet-class>
   </servlet>
@@ -69,10 +65,7 @@
     <servlet-name>RepairServlet</servlet-name>
     <url-pattern>/repairServlet</url-pattern>
   </servlet-mapping>
-  
-  
-    
-    <servlet>
+  <servlet>
     <servlet-name>HandleAcountServlet</servlet-name>
     <servlet-class>AcountJava.HandleAcountServlet</servlet-class>
   </servlet>
@@ -80,9 +73,7 @@
     <servlet-name>HandleAcountServlet</servlet-name>
     <url-pattern>/handleAcountServlet</url-pattern>
   </servlet-mapping>
-  
-  
-      <servlet>
+  <servlet>
     <servlet-name>HandleSpaServlet</servlet-name>
     <servlet-class>Spare.HandleSpaServlet</servlet-class>
   </servlet>
@@ -91,6 +82,17 @@
     <url-pattern>/handleSpaServlet</url-pattern>
   </servlet-mapping>
   
+  
+  
+  
+    <servlet>
+    <servlet-name>LogServlet</servlet-name>
+    <servlet-class>log_in_out.LogServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LogServlet</servlet-name>
+    <url-pattern>/logServlet</url-pattern>
+  </servlet-mapping>
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
     <welcome-file>index.htm</welcome-file>
