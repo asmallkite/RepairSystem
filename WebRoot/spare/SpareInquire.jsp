@@ -140,6 +140,8 @@ div#footer {clear:both;text-align:center;}
 
 
 <div id="container">
+<form action="../handleSpaServlet?service=find" target="_self"
+			name="userForm" method="post">
 
 <div id="header">
 <h1></h1>
@@ -174,8 +176,6 @@ div#footer {clear:both;text-align:center;}
   
   </div>
   <div id=kong2;>
-  <form action="../HandleSpaServlet?service=inquiry" target="_self"
-			name="userForm" method="post">
   <p><font size="4" face="Verdana" color="#66CCCC" ><B>
 请输入备件名称:</B>
 </font> <input type="text" name="spare_name">    <input type="submit" name="Submit" value="查询" background-color=" #9AD0D8" style="height:40px;width:80px; background:#9AD0D8"/></p>

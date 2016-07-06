@@ -2,17 +2,12 @@ package Spare;
 
 
 import java.io.IOException;
-import java.io.PrintWriter;
-
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import Sparejava.SpareFunManage;
-import Sparejava.Spare;
 
 
 public class HandleSpaServlet extends HttpServlet {
@@ -31,15 +26,12 @@ public class HandleSpaServlet extends HttpServlet {
 			request.setCharacterEncoding("utf-8");
 			response.setCharacterEncoding("utf-8");
 		    String	spare_name = request.getParameter("spare_name");
-			System.out.println("the attention:\n\n\n" + request.getParameter("spare_name"));
+			
 			String	spare_typw = request.getParameter("spare_typw");
 		    int	 spare_count = Integer.parseInt(request.getParameter("spare_count"));
 			String spare_price= request.getParameter("spare_price");
 			String spare_to_lib_time = request.getParameter("spare_to_lib_time");
 		    int	spare_alert_count= Integer.parseInt(request.getParameter("spare_alert_count"));
-			
-		
-			//���캯�����
 			Spare spare = new Spare( 	
 					spare_name,
 					 spare_typw,
@@ -51,17 +43,17 @@ public class HandleSpaServlet extends HttpServlet {
 			
 		   SpareFunManage spareTest = SpareFunManage.getInstance();
 			spareTest.insertSpa(spare);
-			RequestDispatcher dispatcher = request.getRequestDispatcher("SpareIn.jsp");			
+			RequestDispatcher dispatcher = request.getRequestDispatcher("Customer/Test.jsp");			
 			dispatcher.forward(request, response);
 		}
-		else if(service.equals("inquiry")){
+		else if(service.equals("find")){
 				
 			  String spare_name = request.getParameter("spare_name");
 			SpareFunManage countTest = SpareFunManage.getInstance();
 			Spare findSpa = null;
 			findSpa= countTest.getSpaByNo(spare_name);
 			request.setAttribute("findSpa_another", findSpa);
-			RequestDispatcher dispatcher = request.getRequestDispatcher("/Count/SpareInquire1.jsp");
+			RequestDispatcher dispatcher = request.getRequestDispatcher("spare/SpareInquire1.jsp");
 			dispatcher.forward(request, response);		
 		
 		}
