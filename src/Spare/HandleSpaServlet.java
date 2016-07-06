@@ -59,10 +59,22 @@ public class HandleSpaServlet extends HttpServlet {
 		}
 		
 		else if(service.equals("delete")){	
+			 String spare_name = request.getParameter("spare_name");
+				SpareFunManage countTest = SpareFunManage.getInstance();
+				Spare findSpa = null;
+				findSpa= countTest.getSpaByNo(spare_name);
+				request.setAttribute("findSpa_another", findSpa);
+				RequestDispatcher dispatcher = request.getRequestDispatcher("spare/SpareDelete1.jsp");
+				dispatcher.forward(request, response);	
+				
+			
+		
+		}else if(service.equals("delete2")){
 			SpareFunManage customTest = SpareFunManage.getInstance();
 			  String	spare_name = request.getParameter("spare_name");
 			customTest.deleteSpaByNo(spare_name);		
-		
+			RequestDispatcher dispatcher = request.getRequestDispatcher("Customer/Test.jsp");			
+			dispatcher.forward(request, response);
 		}
 	}
 	

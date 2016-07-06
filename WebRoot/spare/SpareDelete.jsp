@@ -140,7 +140,7 @@ div#footer {clear:both;text-align:center;}
 
 
 <div id="container">
-<form action="../handleSpaServlet?service=find" target="_self"
+<form action="../handleSpaServlet?service=delete" target="_self"
 			name="userForm" method="post">
 
 <div id="header">
@@ -216,6 +216,7 @@ div#footer {clear:both;text-align:center;}
 
 
   </table>
+  </form>
 </div>
 <div id="footer"></div>
 <table background="123.jpg" border="0">

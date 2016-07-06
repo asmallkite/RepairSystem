@@ -1,4 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@page import="Spare.Spare"%>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -33,11 +34,11 @@ div#footer {clear:both;text-align:center;}
 </style>
 </head>
 
-<body background="beijing.jpg" >
+<body background="/Repair/spare/beijing.jpg" >
 
 
 <div id=top>
-<table background="top.jpg"   border="0" cellspacing="0">
+<table background="/Repair/spare/top.jpg"   border="0" cellspacing="0">
 <tr>
   <td width="1900" height="160">
  <div id=top1></div>
@@ -47,7 +48,7 @@ div#footer {clear:both;text-align:center;}
   <div id=top12>
   
   <table   border="0" cellspacing="0">
-<link rel="stylesheet" href="css/style.css" type="text/css" media="screen">
+<link rel="stylesheet" href="/Repair/spare/css/style.css" type="text/css" media="screen">
 
 <div class="example">
     <ul id="nav">
@@ -140,7 +141,8 @@ div#footer {clear:both;text-align:center;}
 
 
 <div id="container">
-<form action="../handleSpaServlet?service=find" target="_self"
+
+<form action="handleSpaServlet?service=delete2" target="_self"
 			name="userForm" method="post">
 
 <div id="header">
@@ -154,7 +156,10 @@ div#footer {clear:both;text-align:center;}
 </ul>
 
 </div>
-<div id="content"><table background="table10.jpg"   border="0" cellspacing="0">
+
+<div id="content">
+
+<table background="/Repair/spare/table10.jpg"   border="0" cellspacing="0">
 <tr>
   <td width="900" height="650">
   
@@ -176,27 +181,24 @@ div#footer {clear:both;text-align:center;}
   
   </div>
   <div id=kong2;>
-  <p><font size="4" face="Verdana" color="#66CCCC" ><B>
-请输入备件名称:</B>
-</font> <input type="text" name="spare_name">    <input type="submit" name="Submit" value="查询" background-color=" #9AD0D8" style="height:40px;width:80px; background:#9AD0D8"/></p>
-</form>
+   <% Spare Display = (Spare)request.getAttribute("findSpa_another"); %>
   <table width="589"" bordercolor="#66CCCC"  border="0">
 
 <tr>
   <th  bgcolor="#9AD0D8">备件名称:</th>
-  <td><input type="text" name="RepairId"></td>
+  <td><input type="text" name="RepairId" value =<%=Display.getSpare_name() %>></td>
 </tr>
 <tr>
   <th  bgcolor="#9AD0D8">备件型号:</th>
-  <td><input type="text" name="CustomerId"></td>
+  <td><input type="text" name="CustomerId" value =<%=Display.getSpare_typw() %>></td>
 </tr>
 <tr>
   <th bgcolor="#9AD0D8">备件数量:</th>
-  <td ><input type="text" name="ProductType"></td>
+  <td ><input type="text" name="ProductType" value =<%=Display.getSpare_count()%>></td>
 </tr>
 <tr>
   <th  bgcolor="#9AD0D8">备件单价</th>
-  <td style="width:350px"><input type="text" name="TroubleType"></td>
+  <td style="width:350px"><input type="text" name="TroubleType"value =<%=Display.getSpare_price()%>></td>
 </tr>
 
 
@@ -206,8 +208,10 @@ div#footer {clear:both;text-align:center;}
   </div>
   <div>
     <div id=Button1>
-     <div id=Button3></div>
-       <input type="button" name="Submit" value="确认" background-color=" #9AD0D8" style="height:40px;width:80px; background:#9AD0D8"/>
+     <div id=Button3>
+      <input type="submit" name="Submit" value="出库" onclick="check()" background-color=" #9AD0D8" style="height:40px;width:80px; background:#9AD0D8"/>
+     </div>
+     
   </div>
     
   
@@ -216,6 +220,7 @@ div#footer {clear:both;text-align:center;}
 
 
   </table>
+  </form>
 </div>
 <div id="footer"></div>
 <table background="123.jpg" border="0">
@@ -228,3 +233,4 @@ div#footer {clear:both;text-align:center;}
 </div>
 </body>
 </html>
+
