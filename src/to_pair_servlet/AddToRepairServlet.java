@@ -103,12 +103,12 @@ RequestDispatcher dispatcher = request.getRequestDispatcher("Customer/Test.jsp")
 			RequestDispatcher dispatcher = request.getRequestDispatcher("ToRepair/UpdateToRepair2.jsp");
 			dispatcher.forward(request, response);
 		}else if(service.equals("update2")){
-			System.out.println("update2222222222222222222222");
-//			String get_number = request.getParameter("repair_number");
-//			To_Repair_Fun_Manage to_Repair_Fun_Manage = To_Repair_Fun_Manage.getInstance();
-//			to_Repair_Fun_Manage.updateCusByNo(get_number);
-//			RequestDispatcher dispatcher = request.getRequestDispatcher("Customer/Test.jsp");
-//			dispatcher.forward(request, response);
+			
+			String get_number = request.getParameter("repair_number");
+			To_Repair_Fun_Manage to_Repair_Fun_Manage = To_Repair_Fun_Manage.getInstance();
+			to_Repair_Fun_Manage.updateCusByNo(get_number);
+			RequestDispatcher dispatcher = request.getRequestDispatcher("Customer/Test.jsp");
+			dispatcher.forward(request, response);
 		}
 		
 	}
