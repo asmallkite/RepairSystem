@@ -182,7 +182,7 @@ div#footer {clear:both;text-align:center;}
 
 <tr>
   <th  bgcolor="#9AD0D8">备件名称:</th>
-  <td><input type="text" name="RepairId" value =<%=Display.getSpare_name() %>></td>
+  <td><input type="text" name="spare_name" value =<%=Display.getSpare_name() %>></td>
 </tr>
 <tr>
   <th  bgcolor="#9AD0D8">备件型号:</th>

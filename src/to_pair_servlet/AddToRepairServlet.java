@@ -93,6 +93,9 @@ RequestDispatcher dispatcher = request.getRequestDispatcher("Customer/Test.jsp")
 			String get_number = request.getParameter("repair_number");
 			To_Repair_Fun_Manage to_Repair_Fun_Manage = To_Repair_Fun_Manage.getInstance();
 			to_Repair_Fun_Manage.deleteToRepairByNo(get_number);
+RequestDispatcher dispatcher = request.getRequestDispatcher("Customer/Test.jsp");
+			
+			dispatcher.forward(request, response);
 			
 		}else if(service.equals("update")){
 			String get_number = request.getParameter("repair_number");

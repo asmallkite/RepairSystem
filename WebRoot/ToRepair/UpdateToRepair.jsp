@@ -156,7 +156,7 @@ with (thisform)
 			name="userForm" method="post">
 
 
-    <div id="header" background="beijing.jpg" >
+    <div id="header" background="/Repair/ToRepair/beijing.jpg" >
         <h1></h1>
     </div>
     <div id="menu">
@@ -166,7 +166,7 @@ with (thisform)
         </ul>
 
     </div>
-    <div id="content"><table background="table18.jpg"   border="0" cellspacing="0">
+    <div id="content"><table background="/Repair/ToRepair/table18.jpg"   border="0" cellspacing="0">
         <tr>
             <td width="900" height="650">
 

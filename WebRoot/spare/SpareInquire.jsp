@@ -135,7 +135,10 @@ div#footer {clear:both;text-align:center;}
 </tr>
 </table>
 </div>
-<div id="content"><table background="table10.jpg"   border="0" cellspacing="0">
+<div id="content">
+<form action="../handleSpaServlet?service=find" target="_self"
+			name="userForm" method="post">
+<table background="table10.jpg"   border="0" cellspacing="0">
 <tr>
   <td width="900" height="650">
   
