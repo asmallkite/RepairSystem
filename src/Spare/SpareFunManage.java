@@ -95,9 +95,7 @@ public class SpareFunManage {
 		
 		
 		
-		 public void updateSpaByNo(Spare spare) {
-		     this.insertSpa(spare);
-		    }
+	
 	}
 
 

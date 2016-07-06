@@ -8,7 +8,6 @@ package Spare;
 	Spare getSpaByNo(String spare_name);
 	    void insertSpa(Spare spare); 
 	    void deleteSpaByNo(String spare_name);
-	    void updateSpaByNo(String spare_name);
 
 	}
 

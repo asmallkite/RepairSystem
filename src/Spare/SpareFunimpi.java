@@ -90,10 +90,4 @@ public class SpareFunimpi implements SpareFun {
 
 	
 
-		@Override
-		public void updateSpaByNo(String spare_name) {
-			// TODO Auto-generated method stub
-			
-		}
-
 }
