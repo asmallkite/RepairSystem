@@ -49,11 +49,7 @@
     <servlet-name>UpdateServlet2</servlet-name>
     <url-pattern>/updateServlet2</url-pattern>
   </servlet-mapping>
-  
-  
-  
-  
-    <servlet>
+  <servlet>
     <servlet-name>AddToRepairServlet</servlet-name>
     <servlet-class>to_pair_servlet.AddToRepairServlet</servlet-class>
   </servlet>
@@ -61,6 +57,21 @@
     <servlet-name>AddToRepairServlet</servlet-name>
     <url-pattern>/addToRepairServlet</url-pattern>
   </servlet-mapping>
+  
+  
+  
+  
+    <servlet>
+    <servlet-name>RepairServlet</servlet-name>
+    <servlet-class>repair.RepairServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RepairServlet</servlet-name>
+    <url-pattern>/repairServlet</url-pattern>
+  </servlet-mapping>
+  
+  
+  
   
   
   <welcome-file-list>
