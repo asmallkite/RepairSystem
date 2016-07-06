@@ -27,7 +27,7 @@ public class HandleAcountServlet extends HttpServlet {
 			request.setCharacterEncoding("utf-8");
 			response.setCharacterEncoding("utf-8");
 		    int	se_repair_number = Integer.parseInt(request.getParameter("se_repair_number"));
-			System.out.println("the attention:\n\n\n" + request.getParameter("se_repair_number"));
+	
 			String	se_repair_cast = request.getParameter("se_repair_cast");
 			String se_material_cast = request.getParameter("se_material_cast");
 			String se_attention = request.getParameter("se_attention");
@@ -44,7 +44,7 @@ public class HandleAcountServlet extends HttpServlet {
 			
 		   CountFunManage countTest = CountFunManage.getInstance();
 			countTest.insertCou(count);
-			RequestDispatcher dispatcher = request.getRequestDispatcher("RegisterAccount.jsp");			
+			RequestDispatcher dispatcher = request.getRequestDispatcher("Customer/Test.jsp");			
 			dispatcher.forward(request, response);
 		}
 		else if(service.equals("inquiry")){
