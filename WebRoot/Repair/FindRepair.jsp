@@ -1,4 +1,3 @@
-<%@page import="to_repair.To_repair_stament"%>
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
 <%
 String path = request.getContextPath();
@@ -52,10 +51,10 @@ div#footer {clear:both;text-align:center;}
 </style>
 </head>
 
-<body background="/Repair/ToRepair/beijing.jpg" >
+<body background="beijing.jpg" >
 
 <div id=top>
-<table background="/Repair/ToRepair/top.jpg"   border="0" cellspacing="0">
+<table background="top.jpg"   border="0" cellspacing="0">
 <tr>
   <td width="1900" height="160">
  <div id=top1></div>
@@ -65,7 +64,7 @@ div#footer {clear:both;text-align:center;}
   <div id=top12>
   
   <table   border="0" cellspacing="0">
-<link rel="stylesheet" href="/Repair/ToRepair/css/style.css" type="text/css" media="screen">
+<link rel="stylesheet" href="css/style.css" type="text/css" media="screen">
 
 <div class="example">
     <ul id="nav">
@@ -154,7 +153,7 @@ div#footer {clear:both;text-align:center;}
 </div>
 
 <div id="container">
-<form action="../addToRepairServlet?service=find2" target="_self"
+<form action="../repairServlet?service=find" target="_self"
 			name="userForm" method="post">
 <div id="header">
 <h1></h1>
@@ -167,7 +166,7 @@ div#footer {clear:both;text-align:center;}
 </ul>
 
 </div>
-<div id="content"><table background="/Repair/ToRepair/table14.jpg"   border="0" cellspacing="0">
+<div id="content"><table background="table14.jpg"   border="0" cellspacing="0">
 <tr>
   <td width="900" height="650">
   
@@ -189,20 +188,24 @@ div#footer {clear:both;text-align:center;}
   
   </div>
   <div id=kong2;>
-  
-  <% To_repair_stament return_to_sta = (To_repair_stament)request.getAttribute("to_and_to");%>
-
-
+ 
+  <p><font size="4" face="Verdana" color="#66CCCC" >
+      <B>请输入维修编号:</B>
+    </font>   
+  <input type="text" name="repair_number" size="30">
+  <input type="submit" name="Submit" value="查询" background-color=" #9AD0D8" style="height:40px;width:80px; background:#9AD0D8"> 
+  </p>
+  </form>
 
   <table width="589"" bordercolor="#66CCCC"  border="0">
 
 <tr>
   <th  bgcolor="#9AD0D8">维修编号:</th>
-  <td><input type="text" name="repair_number2" value=<%=return_to_sta.getTo_repair_number() %>></td>
+  <td><input type="text" name="repair_number2"></td>
 </tr>
 <tr>
   <th  bgcolor="#9AD0D8">维修人员:</th>
-  <td><input type="text" name="repair_man" value=<%=return_to_sta.getTo_repair_ma%>></td>
+  <td><input type="text" name="repair_man"></td>
 </tr>
 <tr>
   <th  bgcolor="#9AD0D8">检测记录:</th>
@@ -249,10 +252,10 @@ div#footer {clear:both;text-align:center;}
   <div id=Button2>
 
 </table>
- 
+ </form>
 </div>
 <div id="footer"></div>
-<table background="/Repair/ToRepair/123.jpg" border="0">
+<table background="123.jpg" border="0">
 <tr>
 <td width="500" height="200">
 

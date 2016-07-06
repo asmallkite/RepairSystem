@@ -1,3 +1,5 @@
+<%@page import="repair.Repair"%>
+<%@page import="to_repair.To_repair_stament"%>
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
 <%
 String path = request.getContextPath();
@@ -51,10 +53,10 @@ div#footer {clear:both;text-align:center;}
 </style>
 </head>
 
-<body background="beijing.jpg" >
+<body background="/Repair/ToRepair/beijing.jpg" >
 
 <div id=top>
-<table background="top.jpg"   border="0" cellspacing="0">
+<table background="/Repair/ToRepair/top.jpg"   border="0" cellspacing="0">
 <tr>
   <td width="1900" height="160">
  <div id=top1></div>
@@ -64,7 +66,7 @@ div#footer {clear:both;text-align:center;}
   <div id=top12>
   
   <table   border="0" cellspacing="0">
-<link rel="stylesheet" href="css/style.css" type="text/css" media="screen">
+<link rel="stylesheet" href="/Repair/ToRepair/css/style.css" type="text/css" media="screen">
 
 <div class="example">
     <ul id="nav">
@@ -153,7 +155,7 @@ div#footer {clear:both;text-align:center;}
 </div>
 
 <div id="container">
-<form action="../addToRepairServlet?service=find" target="_self"
+<form action="../repairServlet?service=find2" target="_self"
 			name="userForm" method="post">
 <div id="header">
 <h1></h1>
@@ -166,7 +168,7 @@ div#footer {clear:both;text-align:center;}
 </ul>
 
 </div>
-<div id="content"><table background="table14.jpg"   border="0" cellspacing="0">
+<div id="content"><table background="/Repair/Repair/table14.jpg"   border="0" cellspacing="0">
 <tr>
   <td width="900" height="650">
   
@@ -188,44 +190,40 @@ div#footer {clear:both;text-align:center;}
   
   </div>
   <div id=kong2;>
- 
-  <p><font size="4" face="Verdana" color="#66CCCC" >
-      <B>请输入维修编号:</B>
-    </font>   
-  <input type="text" name="repair_number" size="30">
-  <input type="submit" name="Submit" value="查询" background-color=" #9AD0D8" style="height:40px;width:80px; background:#9AD0D8"> 
-  </p>
-  </form>
+  
+  <% Repair repairruturn = (Repair)request.getAttribute("to_and_to");%>
+
+
 
   <table width="589"" bordercolor="#66CCCC"  border="0">
 
 <tr>
   <th  bgcolor="#9AD0D8">维修编号:</th>
-  <td><input type="text" name="repair_number2"></td>
+  <td><input type="text" name="repair_number2" value=<%=repairruturn.getRepair_number() %>></td>
 </tr>
 <tr>
   <th  bgcolor="#9AD0D8">维修人员:</th>
-  <td><input type="text" name="repair_man"></td>
+  <td><input type="text" name="repair_man" value=<%=repairruturn.getRepair_man()%>></td>
 </tr>
 <tr>
   <th  bgcolor="#9AD0D8">检测记录:</th>
-  <td><input type="text" name="repair_check_record"></td>
+  <td><input type="text" name="repair_check_record" value=<%=repairruturn.getRepair_record()%>></td>
 </tr>
 <tr>
   <th  bgcolor="#9AD0D8">维修记录:</th>
-  <td><input type="text" name="repair_record"></td>
+  <td><input type="text" name="repair_record" value=<%=repairruturn.getRepair_check_record()%>></td>
 </tr>
 <tr>
   <th  bgcolor="#9AD0D8">维修检测时间:</th>
-  <td><input type="text" name="repair_check_time"></td>
+  <td><input type="text" name="repair_check_time" value=<%=repairruturn.getRepair_check_time()%>></td>
 </tr>
 <tr>
   <th  bgcolor="#9AD0D8">工作量:</th>
-  <td><input type="text" name="repair_work_amount"></td>
+  <td><input type="text" name="repair_work_amount" value=<%=repairruturn.getRepair_work_amount()%>></td>
 </tr>
 <tr>
   <th bgcolor="#9AD0D8">维修所使用的器件:</th>
-  <td ><input type="text" name="repair_use_device"></td>
+  <td ><input type="text" name="repair_use_device"  value=<%=repairruturn.getRepair_use_device()%>></td>
 </tr>
 <tr>
   <th height="68" bgcolor="#9AD0D8">维修状态:</th>
@@ -252,10 +250,10 @@ div#footer {clear:both;text-align:center;}
   <div id=Button2>
 
 </table>
- </form>
+ 
 </div>
 <div id="footer"></div>
-<table background="123.jpg" border="0">
+<table background="/Repair/ToRepair/123.jpg" border="0">
 <tr>
 <td width="500" height="200">
 
