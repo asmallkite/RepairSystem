@@ -2,6 +2,7 @@ package Spare;
 
 
 import java.io.IOException;
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -12,24 +13,38 @@ import javax.servlet.http.HttpServletResponse;
 
 public class HandleSpaServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	
        
+
+	/* (non-Javadoc)
+	 * @see javax.servlet.http.HttpServlet#doGet(javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse)
+	 */
+	@Override
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		this.doPost(request, response);
+	}
+
+
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		String service = request.getParameter("service");
+		response.setContentType("text/html;charset=UTF-8");
+		request.setCharacterEncoding("utf-8");
+		response.setCharacterEncoding("utf-8");
 		if(service == null || service.equals("")){
-			System.out.println((new java.util.Date()).toLocaleString() + ":�����г��û��б?");
+			System.out.println((new java.util.Date()).toLocaleString() + ":");
 		}else if(service.equals("add")){
 			
 		
-			response.setContentType("text/html;charset=UTF-8");
-			request.setCharacterEncoding("utf-8");
-			response.setCharacterEncoding("utf-8");
-		    String	spare_name = request.getParameter("spare_name");
 			
-			String	spare_typw = request.getParameter("spare_typw");
+		    String	spare_name =  new String(request.getParameter("spare_name").getBytes("ISO-8859-1"),"utf-8");
+	
+			String	spare_typw =  new String(request.getParameter("spare_typw").getBytes("ISO-8859-1"),"utf-8");
 		    int	 spare_count = Integer.parseInt(request.getParameter("spare_count"));
-			String spare_price= request.getParameter("spare_price");
+			String spare_price= new String(request.getParameter("spare_price").getBytes("ISO-8859-1"),"utf-8");
 			String spare_to_lib_time = request.getParameter("spare_to_lib_time");
 		    int	spare_alert_count= Integer.parseInt(request.getParameter("spare_alert_count"));
 			Spare spare = new Spare( 	

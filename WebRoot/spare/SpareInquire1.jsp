@@ -1,4 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"%>
 <%@page import="Spare.Spare"%>
 <%
 String path = request.getContextPath();
@@ -12,7 +13,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <!DOCTYPE html>
 <html>
 <head>
-<meta content="text/html" charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <style type="text/css">
 div#container{width:1900px}
 div#header {}
@@ -185,12 +186,13 @@ div#footer {clear:both;text-align:center;}
   
   </div>
   <div id=kong2;>
-   <% Spare Display = (Spare)request.getAttribute("findSpa_another"); %>
+   <% Spare Display = (Spare)request.getAttribute("findSpa_another");
+   String a = new String(Display.getSpare_name().getBytes("ISO-8859-1"),"utf-8"); %>
   <table width="589"" bordercolor="#66CCCC"  border="0">
 
 <tr>
   <th  bgcolor="#9AD0D8">备件名称:</th>
-  <td><input type="text" name="RepairId" value =<%=Display.getSpare_name() %>></td>
+  <td><input type="text" name="RepairId" value =<%=a %>></td>
 </tr>
 <tr>
   <th  bgcolor="#9AD0D8">备件型号:</th>
@@ -224,7 +226,7 @@ div#footer {clear:both;text-align:center;}
   </table>
 </div>
 <div id="footer"></div>
-<table background="123.jpg" border="0">
+<table background="/Repair/spare/123.jpg" border="0">
 <tr>
 <td width="500" height="200">
 
@@ -235,4 +237,3 @@ div#footer {clear:both;text-align:center;}
 </body>
 </html>
 
-                   。

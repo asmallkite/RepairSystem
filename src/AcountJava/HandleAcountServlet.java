@@ -16,25 +16,25 @@ public class HandleAcountServlet extends HttpServlet {
        
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+		response.setContentType("text/html;charset=UTF-8");
+		request.setCharacterEncoding("utf-8");
+		response.setCharacterEncoding("utf-8");
 		String service = request.getParameter("service");
 		if(service == null || service.equals("")){
 			System.out.println((new java.util.Date()).toLocaleString() + "请求为空");
 		}else if(service.equals("add")){
 			
 		
-			response.setContentType("text/html;charset=UTF-8");
-			request.setCharacterEncoding("utf-8");
-			response.setCharacterEncoding("utf-8");
+			
 		    int	se_repair_number = Integer.parseInt(request.getParameter("se_repair_number"));
 	
-			String	se_repair_cast = request.getParameter("se_repair_cast");
-			String se_material_cast = request.getParameter("se_material_cast");
-			String se_attention = request.getParameter("se_attention");
-			String se_time = request.getParameter("se_time");
+			String	se_repair_cast =  request.getParameter("se_repair_cost");
+			String  se_material_cast =request.getParameter("se_meterial_cost");
+			String se_attention =  request.getParameter("se_attention");
+			String se_time =  new String(request.getParameter("se_time").getBytes("ISO-8859-1"),"utf-8");
 			
 		
-		
+//			new String(request.getParameter("se_repair_cost").getBytes("ISO-8859-1"),"utf-8");
 			Count count = new Count( 	
 					 se_repair_number,
 					  se_repair_cast,

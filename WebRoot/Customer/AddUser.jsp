@@ -243,10 +243,10 @@ div#footer {clear:both;text-align:center;}
 <tr>
   <th height="48" bgcolor="#9AD0D8">客户性质:</th>
   <td>  <select name="customer_nature" id="customer_nature" id="customer_nature">   
-        <option value="1">家庭用户</option>   
-        <option value="2">单位用户</option>   
-        <option value="3">代理商</option>   
-         <option value="4">签约用户</option>
+        <option value="family">家庭用户</option>   
+        <option value="unit">单位用户</option>   
+        <option value="bussiness">代理商</option>   
+         <option value="contact">签约用户</option>
       </select>   </td>
 </tr>
 

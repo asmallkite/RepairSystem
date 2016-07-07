@@ -273,7 +273,7 @@ div#footer {clear:both;text-align:center;}
   <div>
     <textarea name="to_repair_trouble_phen" id="to_repair_trouble_phen" cols=40 rows=4 onmouseover=this.focus();this.select();  
            onclick="if(value==defaultValue){value='';this.style.color='#070707'}"   
-           onBlur="if(!value){value=defaultValue;this.style.color='#BBB7B7'}"}">请写下您机器的故障现象</textarea>
+           onBlur="if(!value){value=defaultValue;this.style.color='#BBB7B7'}"}"></textarea>
            <span style="color:red">*</span>
   </div>
   </td>

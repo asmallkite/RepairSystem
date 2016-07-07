@@ -230,7 +230,7 @@ div#footer {clear:both;text-align:center;}
 </tr>
 <tr>
   <th  bgcolor="#9AD0D8">保修承诺:</th>
-  <td style="width:350px">非正常损坏，保修一年</td>
+  <td style="width:350px" >非正常损坏，保修一年</td>
 </tr>
 
 <tr>

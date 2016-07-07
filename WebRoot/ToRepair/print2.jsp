@@ -172,7 +172,7 @@ with (thisform)
     <div id="content">
     
     
-    <table background="/Repair/ToRepair/table55.jpgtable55.jpg"   border="0" cellspacing="0">
+    <table background="/Repair/ToRepair/table55.jpg"   border="0" cellspacing="0">
         <tr>
             <td width="900" height="650">
 

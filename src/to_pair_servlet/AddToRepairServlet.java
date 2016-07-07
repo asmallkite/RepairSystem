@@ -25,7 +25,9 @@ public class AddToRepairServlet extends HttpServlet {
 	 */
 	@SuppressWarnings("deprecation")
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+		response.setContentType("text/html;charset=UTF-8");
+		request.setCharacterEncoding("UTF-8");
+		response.setCharacterEncoding("UTF-8");
 		String service = request.getParameter("service");
 		if(service == null || service.equals("")){
 			System.out.println((new java.util.Date()).toLocaleString() + ":请求列出用户列表！");
