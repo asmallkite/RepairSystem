@@ -207,7 +207,7 @@ with (thisform)
 
 <tr>
   <th height="68" bgcolor="#9AD0D8">产品类型:</th>
-  <td> value=<%=return_to_sta.getTo_repair_product_type() %>  </td>
+  <td> <input type="text" name="to_repair_product_type" value=<%=return_to_sta.getTo_repair_product_type() %>>  </td>
 </tr>
 <tr>
   <th  bgcolor="#9AD0D8">机器品牌:</th>
