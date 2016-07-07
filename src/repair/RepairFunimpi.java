@@ -100,9 +100,9 @@ public class RepairFunimpi implements RepairFun {
 
 		        try {
 		            connection = DbUtils.getConnection();
-		            String sql = "UPDATE repair set repair_man=? , repair_check_record = ?, repair_record=?, repair_check_time=?"
-		            		+ "repair_work_amount=?,repair_use_device=?,repair_state=? where repair_number=?";
-		          
+		            String sql = "UPDATE repair set repair_man= ? , repair_check_record = ?, repair_record= ?, repair_check_time=? ,"
+		            		+ "repair_work_amount= ?,repair_use_device= ?,repair_state= ? where repair_number=? ";
+		          System.out.println(sql);
 		            preparedStatement = connection.prepareStatement(sql);
 		            
 		            preparedStatement.setString(1, repair.getRepair_man());
