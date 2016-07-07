@@ -114,8 +114,8 @@ div#footer {clear:both;text-align:center;}
                         <li><a href="/Repair/ToRepair/DeleToRepair.jsp">删除报修任务</a></li>
                                         </ul>
                 </li>
-				<li><a href="/Repair/Customer/FindCus.jsp">打印客户确认单</a></li>
-				<li><a href="/Repair/Customer/FindCus.jsp">提交客户确认单</a></li>
+				<li><a href="/Repair/ToRepair/print.jsp">打印客户确认单</a></li>
+				<li><a href="/Repair/ToRepair/print.jsp">提交客户确认单</a></li>
                
             </ul>
         </li>
