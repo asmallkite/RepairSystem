@@ -98,13 +98,13 @@ public class CustomerFunManage {
 	
 	
 	
-	 public void updateCusByNo(int customer_number) {
+	 public void updateCusByNo(Customer customer) {
 		 Connection connection = null;
 			try{
 				connection = DbUtils.getConnection();
 				CustomFunImpl customFunImpl = new CustomFunImpl(connection);
 				DbUtils.beginTransaction(connection);
-				customFunImpl.updateCusByNo(customer_number);
+				customFunImpl.updateCusByNo(customer);
 				DbUtils.commit(connection);
 		} catch (ServiceException e) {
 			throw e;

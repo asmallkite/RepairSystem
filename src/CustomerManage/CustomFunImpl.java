@@ -99,11 +99,35 @@ public class CustomFunImpl implements CustomFun {
 	    }
 
 	    @Override
-	    public void updateCusByNo(int customer_number) {
-	    	Customer customer01 = null;
-			 customer01 = this.getCusByNo(customer_number);
-			 insertCus(customer01);
-	     
-	    }
+		public void updateCusByNo(Customer customer) {
+			Connection connection = null;
+			PreparedStatement preparedStatement = null;
 
+			try {
+				connection = DbUtils.getConnection();
+				String sql = "UPDATE customer set customer_id = ? , customer_send_mac = ? ,customer_nature = ?, customer_unit=?, " +
+						"customer_tel=?, customer_phone=?, customer_address=?, customer_postcode=?, customer_contacts=?, customer_email=? where customer_number=?";
+//				String sql = "INSERT INTO customer VALUES(?,?,?,?,?,?,?,?,?,?,?)";
+				preparedStatement = connection.prepareStatement(sql);
+				preparedStatement.setString(1, customer.getCustomer_id());
+				preparedStatement.setDate(2, (Date) customer.getCustomer_send_mac());
+				preparedStatement.setString(3, customer.getCustomer_nature());
+				preparedStatement.setString(4, customer.getCustomer_unit());
+				preparedStatement.setString(5, customer.getCustomer_tel());
+				preparedStatement.setString(6, customer.getCustomer_phone());
+				preparedStatement.setString(7, customer.getCustomer_address());
+				preparedStatement.setString(8, customer.getCustomer_postcode());
+				preparedStatement.setString(9, customer.getCustomer_contacts());
+				preparedStatement.setString(10, customer.getCustomer_email());
+				preparedStatement.setInt(11, customer.getCustomer_number());
+				preparedStatement.executeUpdate();
+
+			} catch (SQLException e) {
+				e.printStackTrace();
+			} finally {
+				DbUtils.closePrepareStatement(preparedStatement);
+				DbUtils.closeConnection(connection);
+			}
+
+		}
 }
