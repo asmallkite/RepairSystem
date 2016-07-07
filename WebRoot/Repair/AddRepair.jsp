@@ -149,6 +149,17 @@ div#footer {clear:both;text-align:center;}
 </tr>
 </table>
 </div>
+<div id="container">
+
+<div id="header">
+<h1></h1>
+</div>
+<div id="menu">
+<h2></h2>
+<ul>
+
+</ul>
+</div>
 <div id="content">
 <form action="../repairServlet?service=add" target="_self"
 			name="userForm" method="post">

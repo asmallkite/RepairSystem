@@ -19,7 +19,7 @@ public class CountFunimpi implements CountFun {
 	     Count count = new Count();
 	        try {
 	            connection = DbUtils.getConnection();
-	            String sql = "SELECT * from account  where  se_repair_number = ?";
+	            String sql = "SELECT * from accounta  where  se_repair_number = ?";
 	            preparedStatement = connection.prepareStatement(sql);
 	            preparedStatement.setInt(1,  se_repair_number);
 	            resultSet = preparedStatement.executeQuery();
@@ -48,7 +48,7 @@ public class CountFunimpi implements CountFun {
 
 	        try {
 	            connection = DbUtils.getConnection();
-	            String sql = "INSERT INTO account VALUES(?,?,?,?,?)";
+	            String sql = "INSERT INTO accounta VALUES(?,?,?,?,?)";
 	            preparedStatement = connection.prepareStatement(sql);
 	            preparedStatement.setInt(1, count.getSe_repair_number());
 	            preparedStatement.setString(2, count.getSe_repair_cast());
@@ -72,7 +72,7 @@ public class CountFunimpi implements CountFun {
 	        try {
 	            connection = DbUtils.getConnection();
 	            
-	            String sql = "DELETE  from account  where se_repair_number = ?";
+	            String sql = "DELETE  from accounta  where se_repair_number = ?";
 	            preparedStatement = connection.prepareStatement(sql);
 	            preparedStatement.setInt(1, se_repair_number);
 	            preparedStatement.executeUpdate();
@@ -92,12 +92,14 @@ public class CountFunimpi implements CountFun {
 
 		        try {
 		            connection = DbUtils.getConnection();
-		            String sql = "UPDATE account set se_repair_cast = ?, se_material_cast = ?, se_attention= ?, se_time = ?"
-		            		+ "where se_repair_number = ?";
-		            System.out.println(sql);
-//		            String sql = "INSERT INTO account VALUES(?,?,?,?,?)";
+//		            String sql = "UPDATE account set se_repair_cast = 'I', se_material_cast = 'ddd', se_attention= 'ddss', se_time = 'dsd' "
+//		            		+ " where se_repair_number = 6";
+		            String sql = "UPDATE accounta set se_repair_cast = ?, se_material_cast = ?, se_attention= ?, se_time = ?"
+		            		+ " where se_repair_number = ?";
+//		            System.out.println(sql);
+      
 		            preparedStatement = connection.prepareStatement(sql);
-		            
+		           
 		            preparedStatement.setString(1, count.getSe_repair_cast());
 		            
 		            preparedStatement.setString(2, count.getSe_material_cast());
@@ -105,8 +107,9 @@ public class CountFunimpi implements CountFun {
 		            preparedStatement.setString(4,count.getSe_time());  
 		            preparedStatement.setInt(5, count.getSe_repair_number());
 		            System.out.println("zhi");
-		            preparedStatement.executeUpdate();
-		            System.out.println("zhixingwnabi" );
+//		            connection.commit();
+		           preparedStatement.executeUpdate();
+		            System.out.println("zhixingwnabi");
 
 		        } catch (SQLException e) {
 		            e.printStackTrace();

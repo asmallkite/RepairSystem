@@ -141,6 +141,17 @@ div#footer {clear:both;text-align:center;}
 <div id="header">
 <h1></h1>
 </div>
+<div id="menu">
+<h2></h2>
+<ul>
+
+</ul>
+</div>
+<div id="container">
+
+<div id="header">
+<h1></h1>
+</div>
 
 <div id="menu">
 <h2></h2>
