@@ -2,34 +2,21 @@ package AcountJava;
 	import java.sql.Connection;
 
 	import utils.DbUtils;
-	import utils.ServiceException;
+import utils.ServiceException;
 
-	/**
-	 * �û���Ϣ�Ĺ����ࣨ���õ���ģʽʵ�֣�
-	 */
+	
 	public class CountFunManage {
-		/**
-		 * ��ʵ��
-		 */
+	
 		private static CountFunManage instance = new CountFunManage();
-		/**
-		 * ȡ��ʵ�� 
-		 * @return ʵ�����
-		 */
+		
 		public static CountFunManage getInstance(){
 			return instance;
 		}
-		/**
-		 * ���췽�� 
-		 */
+		
 		private  CountFunManage() {
 		}
 		
-		/**
-		 * ͨ���Ų�ѯ
-		 * @param customer_number
-		 * @return
-		 */
+	
 		public Count getCouByNo(int se_repair_number){
 			Count count = null;
 			Connection connection = null;
@@ -51,10 +38,7 @@ package AcountJava;
 			return count;
 			
 		}
-		/**
-		 * �����û�
-		 * @param customer
-		 */
+		
 		public void insertCou(Count count){
 			Connection connection = null;
 			try{
@@ -96,13 +80,13 @@ package AcountJava;
 		
 		
 		
-		 public void updateCouByNo(int se_repair_number) {
+		 public void updateCouByNo(Count count) {
 			 Connection connection = null;
 				try{
 					connection = DbUtils.getConnection();
 					CountFunimpi countFunImpl = new CountFunimpi(connection);
 					DbUtils.beginTransaction(connection);
-					countFunImpl.updateCouByNo(se_repair_number);
+					countFunImpl.updateCouByNo(count);
 					DbUtils.commit(connection);
 			} catch (ServiceException e) {
 				throw e;

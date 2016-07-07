@@ -86,10 +86,34 @@ public class CountFunimpi implements CountFun {
 
 
 		@Override
-		public void updateCouByNo(int se_repair_number) {
-		Count acount = new Count();
-		CountFunManage manage = CountFunManage.getInstance();
-		manage.insertCou(acount);
+		public  void updateCouByNo(Count count) {
+			 Connection connection = null;
+		        PreparedStatement preparedStatement = null;
+
+		        try {
+		            connection = DbUtils.getConnection();
+		            String sql = "UPDATE account set se_repair_cast = ?, se_material_cast = ?, se_attention= ?, se_time = ?"
+		            		+ "where se_repair_number = ?";
+		            System.out.println(sql);
+//		            String sql = "INSERT INTO account VALUES(?,?,?,?,?)";
+		            preparedStatement = connection.prepareStatement(sql);
+		            
+		            preparedStatement.setString(1, count.getSe_repair_cast());
+		            
+		            preparedStatement.setString(2, count.getSe_material_cast());
+		            preparedStatement.setString(3, count.getSe_attention());
+		            preparedStatement.setString(4,count.getSe_time());  
+		            preparedStatement.setInt(5, count.getSe_repair_number());
+		            System.out.println("zhi");
+		            preparedStatement.executeUpdate();
+		            System.out.println("zhixingwnabi" );
+
+		        } catch (SQLException e) {
+		            e.printStackTrace();
+		        } finally {
+		            DbUtils.closePrepareStatement(preparedStatement);
+		            DbUtils.closeConnection(connection);
+		        }
 			
 		}
 

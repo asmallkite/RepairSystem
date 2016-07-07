@@ -12,7 +12,7 @@ public class Test {
 			
 		//	测试添加成功
 //			CountFunManage test = CountFunManage.getInstance();
-//			Count count = new Count(6, "d", "dd", "d", "dd");
+//			Count count = new Count(6, "李争", "恶毒的", "的方法", "dd");
 //			test.insertCou(count);
 			//	测试查询成功
 //			CountFunManage test = CountFunManage.getInstance();
@@ -21,11 +21,12 @@ public class Test {
 //		System.out.println("user info:\n" + customer01.getSe_repair_cast());
 //			System.out.println("user info:\n" );
 //			测试update
-//			CountFunManage test = CountFunManage.getInstance();
-//			test.updateCouByNo(6);
-			//测试删除
 			CountFunManage test = CountFunManage.getInstance();
-			test.deleteCouByNo(12);
+			Count count = new Count(6, "李争", "haohahod", "阿弥月是好", "课结合");
+			test.updateCouByNo(count);
+			//测试删除
+//			CountFunManage test = CountFunManage.getInstance();
+//			test.deleteCouByNo(6);
 			
 	
 	}
