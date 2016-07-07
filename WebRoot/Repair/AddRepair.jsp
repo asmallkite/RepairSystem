@@ -207,10 +207,10 @@ div#footer {clear:both;text-align:center;}
 <tr>
   <th height="68" bgcolor="#9AD0D8">维修状态:</th>
   <td>  <select name="repair_state" id="repair_state">   
-        <option value="1">未分配</option>   
-        <option value="2">分配未检测</option>   
-        <option value="3">检测完成维修未完成</option>   
-         <option value="4">维修完成</option>
+        <option value="分配">未分配</option>   
+        <option value="检测">分配未检测</option>   
+        <option value="完捡">检测完成维修未完成</option>   
+         <option value="完修">维修完成</option>
       </select>  <span style="color:red">*</span> </td>
 </tr>
 

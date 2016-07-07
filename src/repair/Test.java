@@ -14,16 +14,17 @@ public class Test {
 		//测试查询
 //		RepairFunManage test_Manage = RepairFunManage.getInstance();
 //	    Repair customer01 = null;
-//	    customer01 = test_Manage.getRepByNo(1);
+//	    customer01 = test_Manage.getRepByNo(2);
 //	System.out.println("user info:\n" + customer01.getRepair_use_device());
 //	System.out.println("user info:\n" );
 //		
 	//测试删除
-		RepairFunManage test_Manage = RepairFunManage.getInstance();
-		test_Manage.deleteRepByNo(12);
-		//测试修改
 //		RepairFunManage test_Manage = RepairFunManage.getInstance();
-//		test_Manage.updateCouByNo(1);
+//		test_Manage.deleteRepByNo(12);
+		//测试修改
+		RepairFunManage test_Manage = RepairFunManage.getInstance();
+		Repair repair01 = new Repair(2, "李振", "只","李振", "李振", "d李振" ,"d李振f" ,"hiajg" );
+		test_Manage.updateCouByNo(repair01);
 
 }
 

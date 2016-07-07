@@ -1,20 +1,16 @@
 package repair;
 import java.sql.Connection;
+
 import utils.DbUtils;
 import utils.ServiceException;
 public class RepairFunManage {
 	
 		private static RepairFunManage instance = new RepairFunManage();
-		/**
-		 * ȡ��ʵ�� 
-		 * @return ʵ�����
-		 */
+		
 		public static RepairFunManage getInstance(){
 			return instance;
 		}
-		/**
-		 * ���췽�� 
-		 */
+		
 		private  RepairFunManage() {
 		}
 		
@@ -89,13 +85,13 @@ public class RepairFunManage {
 		
 		
 		
-		 public void updateCouByNo(int repair_number) {
+		 public void updateCouByNo(Repair repair) {
 			 Connection connection = null;
 				try{
 					connection = DbUtils.getConnection();
 					RepairFunimpi repairFunimpi = new RepairFunimpi(connection);
 					DbUtils.beginTransaction(connection);
-					repairFunimpi.updateRepByNo(repair_number);
+					repairFunimpi.updateRepByNo(repair);
 					DbUtils.commit(connection);
 			} catch (ServiceException e) {
 				throw e;

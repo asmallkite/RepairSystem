@@ -93,10 +93,35 @@ public class RepairFunimpi implements RepairFun {
 		
 
 			@Override
-			public void updateRepByNo(int repair_number) {
-				Repair repair_temp = new Repair();
-				repair_temp  = this.getRepByNo(repair_number);
-				insertRep(repair_temp);
+			public void updateRepByNo(Repair repair) {
+				
+				Connection connection = null;
+		        PreparedStatement preparedStatement = null;
+
+		        try {
+		            connection = DbUtils.getConnection();
+		            String sql = "UPDATE repair set repair_man=? , repair_check_record = ?, repair_record=?, repair_check_time=?"
+		            		+ "repair_work_amount=?,repair_use_device=?,repair_state=? where repair_number=?";
+		          
+		            preparedStatement = connection.prepareStatement(sql);
+		            
+		            preparedStatement.setString(1, repair.getRepair_man());
+		            preparedStatement.setString(2,repair.getRepair_check_record());
+		            preparedStatement.setString(3, repair.getRepair_record());
+		            preparedStatement.setString(4, repair.getRepair_check_time());
+		            preparedStatement.setString(5, repair.getRepair_work_amount());
+		            preparedStatement.setString(6, repair.getRepair_use_device());		        
+		            preparedStatement.setString(7,repair.getRepair_state());
+		            preparedStatement.setInt(8, repair.getRepair_number());
+		            preparedStatement.executeUpdate();
+
+		        } catch (SQLException e) {
+		            e.printStackTrace();
+		        } finally {
+		            DbUtils.closePrepareStatement(preparedStatement);
+		            DbUtils.closeConnection(connection);
+		        }
+				
 				
 			}
 

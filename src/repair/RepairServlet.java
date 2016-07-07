@@ -30,21 +30,23 @@ public class RepairServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String service = request.getParameter("service");
 		response.setContentType("text/html;charset=UTF-8");
-		request.setCharacterEncoding("utf-8");
-		response.setCharacterEncoding("utf-8");
+		request.setCharacterEncoding("UTF-8");
+		response.setCharacterEncoding("UTF-8");
 		if(service == null || service.equals("")){
 			System.out.println((new java.util.Date()).toLocaleString() + ":请求列出用户列表！");
 		}else if(service.equals("add")){
 			
 			int repair_number = Integer.parseInt(request.getParameter("repair_number"));			
-			String  repair_man = request.getParameter("repair_man");			
-			String repair_check_record = request.getParameter("repair_check_record");			
-			String  repair_record = request.getParameter("repair_record");
+			String  repair_man = new String(request.getParameter("repair_man").getBytes("ISO-8859-1"),"utf-8");
+			String repair_check_record = new String(request.getParameter("repair_check_record").getBytes("ISO-8859-1"),"utf-8");			
+			String  repair_record = new String(request.getParameter("repair_record").getBytes("ISO-8859-1"),"utf-8");	
+				
+			String repair_check_time = new String(request.getParameter("repair_check_time").getBytes("ISO-8859-1"),"utf-8");
 			
-			String repair_check_time = request.getParameter("repair_check_time");			
-			String  repair_work_amount = request.getParameter("repair_work_amount");			
-			String repair_use_device = request.getParameter("repair_use_device");
-			String  repair_state = request.getParameter("repair_state");
+			String  repair_work_amount =new String(request.getParameter("repair_work_amount").getBytes("ISO-8859-1"),"utf-8");	
+			
+			String repair_use_device = new String(request.getParameter("repair_use_device").getBytes("ISO-8859-1"),"utf-8");
+			String  repair_state = new String(request.getParameter("repair_state").getBytes("ISO-8859-1"),"utf-8");	
 		
 			Repair aRepair = new Repair(repair_number, repair_man, repair_check_record, repair_record
 					,repair_check_time, repair_work_amount, repair_use_device, repair_state);
@@ -96,10 +98,25 @@ RequestDispatcher dispatcher = request.getRequestDispatcher("Customer/Test.jsp")
 			RequestDispatcher dispatcher = request.getRequestDispatcher("Repair/UpdateRepair2.jsp");
 			dispatcher.forward(request, response);
 		}else if(service.equals("update2")){
-			int get_number = Integer.parseInt(request.getParameter("repair_number"));
+			int repair_number = Integer.parseInt(request.getParameter("repair_number"));			
+			String  repair_man = new String(request.getParameter("repair_man").getBytes("ISO-8859-1"),"utf-8");
+			String repair_check_record = new String(request.getParameter("repair_check_record").getBytes("ISO-8859-1"),"utf-8");			
+			String  repair_record = new String(request.getParameter("repair_record").getBytes("ISO-8859-1"),"utf-8");	
+				
+			String repair_check_time = new String(request.getParameter("repair_check_time").getBytes("ISO-8859-1"),"utf-8");
+			
+			String  repair_work_amount =new String(request.getParameter("repair_work_amount").getBytes("ISO-8859-1"),"utf-8");	
+			
+			String repair_use_device = new String(request.getParameter("repair_use_device").getBytes("ISO-8859-1"),"utf-8");
+			String  repair_state = new String(request.getParameter("repair_state").getBytes("ISO-8859-1"),"utf-8");	
+		
+			Repair aRepair = new Repair(repair_number, repair_man, repair_check_record, repair_record
+					,repair_check_time, repair_work_amount, repair_use_device, repair_state);
 			
 			RepairFunManage manage = RepairFunManage.getInstance();
-			manage.updateCouByNo(get_number);
+			
+		
+			manage.updateCouByNo(aRepair);
 			RequestDispatcher dispatcher = request.getRequestDispatcher("Customer/Test.jsp");
 			dispatcher.forward(request, response);
 		}
