@@ -1,4 +1,5 @@
-<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%@ page language="java" import="java.util.*" %>
+<%@page pageEncoding="UTF-8" contentType="text/html; charset=UTF-8" %> 
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -224,11 +225,11 @@ div#footer {clear:both;text-align:center;}
 <tr>
   <th height="68" bgcolor="#9AD0D8">产品类型:</th>
   <td>  <select name="to_repair_product_type" id="to_repair_product_type">   
-        <option value="1">台式机</option>   
-        <option value="2">笔记本</option>   
-        <option value="3">投影仪</option>   
-         <option value="4">打印机</option>
-           <option value="5">其他</option>
+        <option value="台式机">台式机</option>   
+        <option value="笔记本">笔记本</option>   
+        <option value="投影仪">投影仪</option>   
+         <option value="打印机">打印机</option>
+           <option value="其他">其他</option>
       </select>   <span style="color:red">*</span></td>
 </tr>
 
@@ -270,8 +271,8 @@ div#footer {clear:both;text-align:center;}
 <tr>
   <th height="68" bgcolor="#9AD0D8">故障类型:</th>
   <td>  <select name="to_repair_trouble_type" id="to_repair_trouble_type">   
-        <option value="1">固定性故障</option>   
-        <option value="2">间隙性故障</option>   
+        <option value="固定性故障">固定性故障</option>   
+        <option value="间隙性故障">间隙性故障</option>   
       </select> <span style="color:red">*</span>  </td>
 </tr>
 
@@ -331,9 +332,9 @@ div#footer {clear:both;text-align:center;}
 <tr>
     <th height="68" bgcolor="#9AD0D8">报修状态:</th>
     <td>  <select name="to_repair_state" id="to_repair_state">
-    <option value="1">未打印</option>
-    <option value="2">打印</option>
-    <option value="3">提交</option>
+    <option value="未打印">未打印</option>
+    <option value="打印">打印</option>
+    <option value="提交">提交</option>
     </select>  <span style="color:red">*</span> </td>
     
 </tr>
