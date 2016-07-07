@@ -1,5 +1,5 @@
-<%@page import="to_repair.To_repair_stament"%>
-<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%@ page language="java" import="java.util.*" %>
+<%@page pageEncoding="UTF-8" contentType="text/html; charset=UTF-8" %> 
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -12,29 +12,23 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <script type="text/javascript">
     function validate_required(field,alerttxt)
     {
-      with (field)
-    {
-      if (value==null||value=="")
+    with (field)
+  {
+    if (value==null||value=="")
     {
       alert(alerttxt);return false
     }
-      else {return true}
+  else {return true}
     }
-    }
+}
 
-    function validate_form(thisform)
-    {
-      with (thisform)
-    {
-      if (validate_required(spare_name,"备件名称未填写!")==false)
-    {
-      spare_name.focus();return false}
-    }
-    }
-
-    function del()
+function validate_form(thisform)
 {
-  alert("删除成功");
+with (thisform)
+  {
+  if (validate_required(spare_name,"备件名称未填写!")==false)
+    {spare_name.focus();return false}
+  }
 }
 </script>
     <style type="text/css">
@@ -159,11 +153,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 </table>
 </div>
 
-<div id="container" >
-<form action="addToRepairServlet?service=delete2" target="_self"
-			name="userForm" method="post">
 
-    <div id="header" background="/Repair/ToRepair/beijing.jpg" >
+<div id="container" >
+<form action="../addToRepairServlet?service=print" target="_self"
+			name="userForm" method="post">
+    <div id="header" background="beijing.jpg" >
         <h1></h1>
     </div>
     <div id="menu">
@@ -173,7 +167,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         </ul>
 
     </div>
-    <div id="content"><table background="/Repair/ToRepair/table15.jpg"   border="0" cellspacing="0">
+    <div id="content">
+    
+    
+    <table background="table55.jpg"   border="0" cellspacing="0">
         <tr>
             <td width="900" height="650">
 
@@ -195,26 +192,39 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
                     </div>
                     <div id=kong2;>
+                    <br>
+                    <br>
+                    <br>
+                    <form action="submitpage.htm" onsubmit="return validate_form(this)" method="post">
+                        <p><font size="4" face="Verdana" color="#66CCCC" >
+                        <B>请输入要提交打印的编号：</B>
+                        </font>   
+                    <input type="text" name="repair_number" size="30">
+                    <input type="submit" name="Submit" value="确认" background-color=" #9AD0D8" style="height:40px;width:80px; background:#9AD0D8"> 
+                    </p>
+                    </form>
+                  
+                        <table width="589" bordercolor="#66CCCC"  border="0">
 
-   
-    
-    <table width="589" bordercolor="#66CCCC"  border="0">
-<br/>
-<br/>
-<br/><br/><br/>
-  <% To_repair_stament return_to_sta = (To_repair_stament)request.getAttribute("to_and_to");%>
         <tr>
   <th  bgcolor="#9AD0D8">维修编号:</th>
-  <td><input type="text" name="repair_number"  value=<%=return_to_sta.getTo_repair_number() %>></td>
+  <td><input type="text" name="repair_number2"></td>
 </tr>
 <tr>
   <th  bgcolor="#9AD0D8">客户编号:</th>
-  <td><input type="text" name="customer_number" value=<%=return_to_sta.getCustomer_number() %>></td>
+  <td><input type="text" name="customer_number"></td>
 </tr>
-
+<tr>
+  <th  bgcolor="#9AD0D8">客户送机时间:</th>
+  <td><input type="text" name="customer_send_mac"></td>
+</tr>
+<tr>
+  <th  bgcolor="#9AD0D8">移动电话:</th>
+  <td><input type="text" name="customer_phone"></td>
+</tr>
 <tr>
   <th height="68" bgcolor="#9AD0D8">产品类型:</th>
-  <td>  <select name="to_repair_product_type" id="to_repair_product_type">   
+  <td>  <select name="to_repair_trouble_type" id="selectAge">   
         <option value="1">台式机</option>   
         <option value="2">笔记本</option>   
         <option value="3">投影仪</option>   
@@ -224,32 +234,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 </tr>
 <tr>
   <th  bgcolor="#9AD0D8">机器品牌:</th>
-  <td><input type="text" name="to_repair_mac_brand" value=<%=return_to_sta.getTo_repair_mac_type() %>></td>
+  <td><input type="text" name="to_repair_mac_brand"></td>
 </tr>
-<tr>
-  <th bgcolor="#9AD0D8">机器型号:</th>
-  <td ><input type="text" name="to_repair_mac_type" value=<%=return_to_sta.getTo_repair_mac_brand()%>></td>
-</tr>
-<tr>
-  <th  bgcolor="#9AD0D8">系列号：</th>
-  <td style="width:350px"><input type="text" name="to_repair_serial" value=<%=return_to_sta.getTo_repair_serial() %>></td>
-</tr>
-
-<tr>
-  <th  bgcolor="#9AD0D8">缺少零件：</th>
-  <td style="width:350px"><input type="text" name="to_repair_lack_part" value=<%=return_to_sta.getTo_repair_lack_part() %>></td>
-</tr>
-<tr>
-  <th height="91" bgcolor="#9AD0D8"><p>机器故障</p>
-    <p>现象:</p></th>
-  <td>	<div>
-    <textarea name="to_repair_trouble_phen" cols=40 rows=4>
-		请写下您机器的故障现象
-		</textarea>
-</div></td>
-</tr>
-
-
 <tr>
   <th height="68" bgcolor="#9AD0D8">故障类型:</th>
   <td>  <select name="to_repair_trouble_type" id="to_repair_trouble_type">   
@@ -257,88 +243,41 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         <option value="2">间隙性故障</option>   
       </select>   </td>
 </tr>
-
-
-<tr>
-  <th  bgcolor="#9AD0D8">机器外观检查</th>
-  <td style="width:350px"><input type="text" name="to_repair_facial_check" value=<%=return_to_sta.getTo_repair_facial_check()%>></td>
-</tr>
-<tr>
-  <th  bgcolor="#9AD0D8">开机口令：</th>
-  <td style="width:350px"><input type="text" name="to_repair_start_cmd" value=<%=return_to_sta.getTo_repair_start_cmd() %>></td>
-</tr>
-<tr>
-  <th  bgcolor="#9AD0D8">重要资料：</th>
-  <td style="width:350px"><input type="text" name="to_repair_impo_files" value=<%=return_to_sta.getTo_repair_impo_files() %>></td>
-</tr>
-
-<tr>
-  <th  bgcolor="#9AD0D8">HDD：</th>
-  <td style="width:350px"><input type="text" name="to_repair_hdd" value=<%=return_to_sta.getTo_repair_hdd() %>></td>
-</tr>
-
-<tr>
-  <th  bgcolor="#9AD0D8">外置PC卡：</th>
-  <td style="width:350px"><input type="text" name="to_repair_pc" value=<%=return_to_sta.getTo_repair_pc() %>></td>
-</tr>
-
-<tr>
-  <th  bgcolor="#9AD0D8">AC适配器：</th>
-  <td style="width:350px"><input type="text" name="to_repair_ac" value=<%=return_to_sta.getTo_repair_ac() %>></td>
-</tr>
-
-<tr>
-  <th  bgcolor="#9AD0D8">器件电池：</th>
-  <td style="width:350px"><input type="text" name="to_repair_battery" value=<%=return_to_sta.getTo_repair_battery() %>></td>
-</tr>
-
-<tr>
-  <th  bgcolor="#9AD0D8">外接光驱：</th>
-  <td style="width:350px"><input type="text" name="to_repair_cd_driver" value=<%=return_to_sta.getTo_repair_cd_driver() %>></td>
-</tr>
-<tr>
-  <th  bgcolor="#9AD0D8">外接软驱：</th>
-  <td style="width:350px"><input type="text" name="to_repair_floppy" value=<%=return_to_sta.getTo_repair_floppy() %>></td>
-</tr>
-
 <tr>
   <th  bgcolor="#9AD0D8">报修时间：</th>
-  <td style="width:350px"><input type="text" name="to_repair_time" value=<%=return_to_sta.getTo_repair_time() %>></td>
+  <td style="width:350px"><input type="text" name="to_repair_time"></td>
 </tr>
-        <tr>
-            <th height="68" bgcolor="#9AD0D8">报修状态:</th>
-            <td>  <select name="to_repair_state" id="to_repair_state">
-                <option value="1">未打印</option>
-                <option value="2">打印</option>
-                <option value="3">提交</option>
-
-            </select>   </td>
-        </tr>
+<tr>
+  <th bgcolor="#9AD0D8">联系人:</th>
+  <td ><input type="text" name="customer_contacts"></td>
+</tr>
     </table>
     </div>
+    
     <div id=kong3>
 
 
 
-        <table background="/Repair/ToRepair/beijing.jpg" border="1">
+        <table background="beijing.jpg" border="1">
         </table>
 
     </div>
     <div>
 
 
-        <div id=Button1>
+     <div id=Button2>
 
         </div>
-   
+           
 
-
+<input type="submit" name="Submit" value="打印提交" background-color=" #9AD0D8" style="height:40px;width:80px; background:#9AD0D8"> 
+                    
 
         <div id=Button2>
-           
-        <input type="submit" name="Delete" value="删除" onclick=del() background-color=" #9AD0D8" style="height:40px;width:80px; background:#9AD0D8"/>
+        
         </div>
-
+        
+</div>
         </table>
         </form>
     </div>
@@ -356,4 +295,3 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 </div>
 </body>
 </html>
-

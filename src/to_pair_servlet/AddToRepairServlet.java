@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import CustomerManage.Customer;
+import CustomerManage.CustomerFunManage;
 import to_repair.To_Repair_Fun_Manage;
 import to_repair.To_repair_stament;
 
@@ -89,11 +91,11 @@ RequestDispatcher dispatcher = request.getRequestDispatcher("Customer/Test.jsp")
 			dispatcher.forward(request, response);
 			
 		}else if(service.equals("delete2")){
-			System.out.println("update2222222222222222222222");
+			
 			String get_number = request.getParameter("repair_number");
 			To_Repair_Fun_Manage to_Repair_Fun_Manage = To_Repair_Fun_Manage.getInstance();
 			to_Repair_Fun_Manage.deleteToRepairByNo(get_number);
-RequestDispatcher dispatcher = request.getRequestDispatcher("Customer/Test.jsp");
+			RequestDispatcher dispatcher = request.getRequestDispatcher("Customer/Test.jsp");
 			
 			dispatcher.forward(request, response);
 			
@@ -143,6 +145,26 @@ RequestDispatcher dispatcher = request.getRequestDispatcher("Customer/Test.jsp")
 			to_Repair_Fun_Manage.updateCus(a_to_repair_sta);
 			RequestDispatcher dispatcher = request.getRequestDispatcher("Customer/Test.jsp");
 			dispatcher.forward(request, response);
+		}else if(service.equals("print")){
+			System.out.println("okkkkkkkkkkkkkkkkccccccccccccccc");
+			String get_number = request.getParameter("repair_number");
+			To_Repair_Fun_Manage to_Repair_Fun_Manage = To_Repair_Fun_Manage.getInstance();
+			To_repair_stament a_re_sta = to_Repair_Fun_Manage.getToRepairByNo(get_number);
+			
+			CustomerFunManage customTest = CustomerFunManage.getInstance();
+			Customer findCus = null;
+			int get_num = Integer.parseInt(get_number);
+			findCus = customTest.getCusByNo(get_num);
+			request.setAttribute("to_and_to", a_re_sta);
+			request.setAttribute("findCus_another", findCus);
+			RequestDispatcher dispatcher = request.getRequestDispatcher("ToRepair/print2.jsp");
+			dispatcher.forward(request, response);
+			System.out.println("okkkkkkkkkkkkkkkk");
+		}else if(service.equals("print2")){
+RequestDispatcher dispatcher = request.getRequestDispatcher("Customer/Test.jsp");
+			
+			dispatcher.forward(request, response);
+			
 		}
 		
 	}
