@@ -94,13 +94,13 @@ public class To_Repair_Fun_Manage {
 	
 	
 	
-	 public void updateCusByNo(String to_repair_number) {
+	 public void updateCus(To_repair_stament to_repair_stament) {
 		 Connection connection = null;
 			try{
 				connection = DbUtils.getConnection();
 				To_Repair_Fun_Imp to_Repair_Fun_Imp = new To_Repair_Fun_Imp(connection);
 				DbUtils.beginTransaction(connection);
-				to_Repair_Fun_Imp.updateToRepairByNo(to_repair_number);
+				to_Repair_Fun_Imp.updateToRepair(to_repair_stament);
 				DbUtils.commit(connection);
 		} catch (ServiceException e) {
 			throw e;

@@ -22,9 +22,12 @@ public class Test_to_repair {
 //		System.out.print(a.getCustomer_number() + "成功了················");
 		
 		//修改测试
-//		To_Repair_Fun_Manage test_fun_Manage = null;
-//		test_fun_Manage = To_Repair_Fun_Manage.getInstance();
-//		test_fun_Manage.updateCusByNo("lizheng");
+		To_Repair_Fun_Manage test_fun_Manage = null;
+		test_fun_Manage = To_Repair_Fun_Manage.getInstance();
+		To_repair_stament to_repair_stament = new To_repair_stament("lizheng",
+		"rr","ff","ww","cc","rr","ff","ww","cc","rr","ff","ww","cc"
+		,"rr","ff","ww","cc","rr","ff","ww","另一个");
+		test_fun_Manage.updateCus(to_repair_stament);
 	}
 	
 
